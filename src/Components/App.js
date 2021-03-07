@@ -5,6 +5,7 @@ import Container from "react-bootstrap/Container";
 import Image from "react-bootstrap/Image";
 import useBackground from "../Hooks/useBackground";
 import placeholder from "../Images/placeholder.png";
+import css from "../App.module.css";
 
 export default function Home() {
   useBackground();
@@ -26,12 +27,8 @@ export default function Home() {
                 quasi repellendus veniam maxime perspiciatis numquam.
               </p>
             </Col>
-            <Col md={12} lg={6}>
-              <Image
-                src={placeholder}
-                className="w-100 rounded-sm"
-                fluid
-              />
+            <Col md={12} lg={6} className={css.image}>
+              <Image src={placeholder} className="w-100 rounded-sm" fluid />
             </Col>
           </Row>
         </Container>

@@ -66,3 +66,9 @@
   stroke: #fff;
   font-size: 1.8rem;
 }
+
+@media screen and (max-width: 992px) {
+  .image {
+    margin-top: -20rem;
+  }
+}
