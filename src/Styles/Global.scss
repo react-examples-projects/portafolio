@@ -1,0 +1,45 @@
+* {
+  color: #212529d1;
+  font-family: "Rubik", sans-serif;
+}
+
+#root {
+  max-height: 100vh;
+  overflow: hidden;
+}
+
+.btn {
+  transition: all 0.2s ease-in-out;
+}
+
+.nav-icon {
+  font-size: 3rem;
+  cursor: pointer;
+}
+
+.nav-bars {
+  display: none;
+  position: fixed;
+  left: 1rem;
+  top: 1rem;
+  z-index: 500;
+}
+
+.nav-close {
+  display: none;
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  stroke: #fff;
+}
+
+@media (max-width: 992px) {
+  .nav-close,
+  .nav-bars {
+    display: block;
+  }
+
+  nav.nav-closed {
+    left: -20rem;
+  }
+}
