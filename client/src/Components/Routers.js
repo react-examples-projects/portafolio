@@ -6,9 +6,9 @@ export default function Routers() {
   return (
     <Router>
       <Switch>
-        {routers.map(({ component: Component, ...args }) => {
+        {routers.map(({ component: Component, ...args }, index) => {
           return (
-            <Route {...args}>
+            <Route {...args} key={index}>
               <Suspense fallback="Cargando...">
                 <Component />
               </Suspense>
@@ -19,4 +19,3 @@ export default function Routers() {
     </Router>
   );
 }
-  

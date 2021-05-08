@@ -34,7 +34,7 @@ function Contact() {
         </Form.Group>
 
         <Form.Group>
-          <Button type="submit" variant="outline-success">
+          <Button type="submit" variant="success" block>
             Enviar
           </Button>
         </Form.Group>

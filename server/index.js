@@ -6,9 +6,7 @@ const morgan = require("morgan");
 const cors = require("cors");
 const app = express();
 const { PORT } = require("./config/config");
-const { success } = require("./helpers/responses");
-const imagePostsRouter = require("./routers/images");
-const commentsRouters = require("./routers/comments");
+const authRouter = require("./routers/authRouter");
 const {
   clientErrorHandler,
   errorHandler,
@@ -23,12 +21,7 @@ app.use(cors());
 app.use(express.static(__dirname + "/uploads"));
 
 // routes middlewares
-imagePostsRouter(app);
-commentsRouters(app);
-
-app.get("/", (req, res) => {
-  res.json(success("Index route is empty"));
-});
+authRouter(app);
 
 // errors
 app.use(clientErrorHandler);

@@ -2,7 +2,12 @@
   color: #212529d1;
   font-family: "Rubik", sans-serif;
 }
-    
+
+body {
+  background: #eee;
+  font-size: 18px;
+}
+
 #root {
   max-height: 100vh;
   overflow: hidden;
@@ -31,6 +36,22 @@
   top: 1rem;
   left: 1rem;
   stroke: #fff;
+}
+
+.btn-success {
+  background: #007991 !important;
+  background: -webkit-linear-gradient(to right, #78ffd6, #007991) !important;
+  background: linear-gradient(to right, #78ffd6, #007991) !important;
+  border-width: 0 !important;
+
+  &:focus {
+    box-shadow: 0 0 0 0.2rem #00799150 !important;
+  }
+}
+
+.Toastify__toast-body {
+  color: #fff !important;
+  font-size: 14px;
 }
 
 @media (max-width: 992px) {
