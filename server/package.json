@@ -1,0 +1,30 @@
+{
+  "name": "react-portfolio",
+  "version": "1.0.0",
+  "description": "My personal portfolio to show my projects",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon index"
+  },
+  "keywords": [
+    "server",
+    "react",
+    "javascript"
+  ],
+  "author": "znareak",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "1.19.0",
+    "cors": "2.8.5",
+    "dotenv": "8.2.0",
+    "express": "4.17.1",
+    "express-fileupload": "1.2.1",
+    "joi": "17.4.0",
+    "moment": "2.29.1",
+    "mongoose": "5.12.2"
+  },
+  "devDependencies": {
+    "morgan": "1.10.0",
+    "nodemon": "2.0.7"
+  }
+}
