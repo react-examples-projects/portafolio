@@ -18,7 +18,7 @@ export default function Login() {
 
       <button className="btn btn-success" type="submit">
         Iniciar sesión
-      </button>
+      </button>    
     </Form>
   );
 }
