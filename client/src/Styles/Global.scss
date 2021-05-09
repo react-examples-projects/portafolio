@@ -13,6 +13,45 @@ body {
   overflow: hidden;
 }
 
+blockquote {
+  font-style: italic;
+  margin-left: 1rem;
+  font-weight: lighter;
+  color: #000;
+  
+  &::before {
+    content: "—“";
+  }
+  &::after {
+    content: "”";
+  }
+}
+
+.underline {
+  position: relative;
+  cursor: pointer;
+  margin: 0 5px;
+
+  &::after {
+    content: "";
+    position: absolute;
+    display: block;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    bottom: 0;
+    opacity: 0.3;
+    background: #007991;
+    background: -webkit-linear-gradient(to right, #78ffd6, #007991);
+    background: linear-gradient(to right, #78ffd6, #007991);
+    transition: all 0.2s ease-in;
+  }
+
+  &:hover::after {
+    height: 101%;
+  }
+}
+
 .btn {
   transition: all 0.2s ease-in-out;
 }

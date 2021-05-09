@@ -7,7 +7,7 @@ import {
   FiChevronsLeft,
   FiAlignJustify,
 } from "react-icons/fi";
-
+import navlinks from "../Config/navlinks";
 import css from "../Styles/App.module.scss";
 
 function Navbar() {
@@ -22,26 +22,11 @@ function Navbar() {
         className={`${css.nav}${!isOpen ? " nav-closed" : ""}`}
       >
         <FiChevronsLeft className="nav-icon nav-close" onClick={toggleNav} />
-
-        <NavLink to="/" activeClassName="active-link">
-          Sobre mí
-        </NavLink>
-
-        <NavLink to="/#" activeClassName="active-link">
-          Proyectos
-        </NavLink>
-
-        <NavLink to="/#" activeClassName="active-link">
-          Habilidades
-        </NavLink>
-
-        <NavLink to="/contacto" activeClassName="active-link">
-          Contacto
-        </NavLink>
-
-        <NavLink to="/login" activeClassName="active-link">
-          Login
-        </NavLink>
+        {navlinks.map(({ path, text }) => (
+          <NavLink to={path} activeClassName={css.activeLink} key={path} exact>
+            {text}
+          </NavLink>
+        ))}
 
         <div className={css.socials}>
           <a href="https://github.com/znareak" target="_blank" rel="noreferrer">

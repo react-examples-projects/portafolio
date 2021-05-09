@@ -19,7 +19,7 @@ const UserProvider = ({ children }) => {
     async function userInfo() {
       try {
         const user = await getUserInfo();
-        if (user) setUser((u) => ({ ...user, ...u }));
+        if (user) setUser((u) => ({ ...user.user, ...u }));
       } catch (err) {
         console.log(err);
       }
