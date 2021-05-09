@@ -7,6 +7,7 @@ const cors = require("cors");
 const app = express();
 const { PORT } = require("./config/config");
 const authRouter = require("./routers/authRouter");
+const userRouter = require("./routers/userRouter");
 const {
   clientErrorHandler,
   errorHandler,
@@ -22,6 +23,7 @@ app.use(express.static(__dirname + "/uploads"));
 
 // routes middlewares
 authRouter(app);
+userRouter(app);
 
 // errors
 app.use(clientErrorHandler);

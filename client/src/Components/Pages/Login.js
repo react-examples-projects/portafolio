@@ -6,10 +6,13 @@ import { login } from "../../Helpers/requests";
 import { useMutation } from "react-query";
 import { toast } from "react-toastify";
 import { useUserContext } from "../../Context/UserContext";
+import { useHistory, Redirect } from "react-router-dom";
+import { setToken } from "../../Helpers/token";
 
 export default function Login() {
   const mutation = useMutation((data) => login(data));
-  const { setUser } = useUserContext();
+  const { user, setUser } = useUserContext();
+  const { push } = useHistory();
 
   const handleSubmit = async (e) => {
     e.preventDefault();
@@ -19,15 +22,19 @@ export default function Login() {
       if (data.isValid) {
         toast.success("Inicio de sesión correcto!");
         setUser(data.user);
+        setToken(data.user.token);
+        push("/");
         return;
       }
-      toast.error("La cuenta invalida, vuelva a intentarlo");
+      toast.error("La cuenta es inválida, vuelva a intentarlo");
       console.log(data);
     } catch (err) {
       toast.error("Ocurrió un error al conectarse");
       console.log(err);
     }
   };
+
+  if (user._id) return <Redirect to="/" />;
 
   return (
     <Form

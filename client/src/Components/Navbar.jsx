@@ -39,6 +39,10 @@ function Navbar() {
           Contacto
         </NavLink>
 
+        <NavLink to="/login" activeClassName="active-link">
+          Login
+        </NavLink>
+
         <div className={css.socials}>
           <a href="https://github.com/znareak" target="_blank" rel="noreferrer">
             <FiGithub />

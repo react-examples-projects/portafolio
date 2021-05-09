@@ -21,7 +21,7 @@ ReactDOM.render(
         <Routers />
       </UserProvider>
     </QueryClientProvider>
-    <ToastContainer />
+    <ToastContainer autoClose={2500}/>
   </React.StrictMode>,
   document.getElementById("root")
 );

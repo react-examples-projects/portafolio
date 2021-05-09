@@ -1,16 +1,15 @@
 const express = require("express");
 const router = express.Router();
-const { success } = require("../helpers/responses");
+const { success, error } = require("../helpers/responses");
 const { errorRouterHandler } = require("../middlewares/errorsHandling");
 const validation = require("../middlewares/validationHandler");
 const { loginShemaValidator } = require("../helpers/shemaValidators");
 const { existsUser } = require("../controllers/user");
+const { verifyToken } = require("../helpers/jwt");
 
 function authRouter(app) {
   app.use("/api", router);
   app.use("/api", errorRouterHandler);
-
-  // To validate the payload body to save in the database
 
   router.post(
     "/login",
@@ -20,7 +19,6 @@ function authRouter(app) {
       try {
         const user = await existsUser(email, password);
         res.json(success(user));
-        
       } catch (err) {
         next({
           errClient: "An error occurred while login the user",
@@ -29,6 +27,20 @@ function authRouter(app) {
       }
     }
   );
+
+  router.get("/verify-token", async (req, res) => {
+    const auth = req.headers.authorization;
+    if (!auth) {
+      return res.json(
+        error({
+          isValid: false,
+        })
+      );
+    }
+    const [, token] = auth.split(" ");
+    const isValid = await verifyToken(token);
+    return res.json(success({ isValid }));
+  });
 }
 
 module.exports = authRouter;
