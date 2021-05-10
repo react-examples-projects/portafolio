@@ -3,7 +3,7 @@ const router = express.Router();
 const { success } = require("../helpers/responses");
 const validation = require("../middlewares/validationHandler");
 const { projectCreateShemaValidator } = require("../helpers/shemaValidators");
-
+const { createProject } = require("../controllers/projects");
 function projectsRouter(app) {
   app.use("/api", router);
 
@@ -12,8 +12,8 @@ function projectsRouter(app) {
     validation(projectCreateShemaValidator),
     async (req, res) => {
       const payload = req.body;
-      console.log(payload);
-      res.json(success(payload));
+      const project = await createProject(payload);
+      res.json(success(project, 201));
     }
   );
 }

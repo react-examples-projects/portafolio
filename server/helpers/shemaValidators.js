@@ -10,7 +10,10 @@ const projectCreateShemaValidator = Joi.object({
   description: Joi.string().required(),
   github: Joi.string().uri().required(),
   link: Joi.string().uri().required(),
-  technologies: Joi.alternatives().try(Joi.string(), Joi.array()).required(),
+  technologies: Joi.alternatives().try(
+    Joi.string().required(),
+    Joi.array().required()
+  ),
 });
 
 module.exports = { loginShemaValidator, projectCreateShemaValidator };
