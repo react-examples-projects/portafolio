@@ -1,12 +1,10 @@
 const express = require("express");
 const router = express.Router();
 const { success } = require("../helpers/responses");
-const { errorRouterHandler } = require("../middlewares/errorsHandling");
 const { getContentToken } = require("../helpers/jwt");
 
 function userRouter(app) {
   app.use("/api", router);
-  app.use("/api", errorRouterHandler);
 
   router.get("/user", async (req, res) => {
     const token = req.query.token;

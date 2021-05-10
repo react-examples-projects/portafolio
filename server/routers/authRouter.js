@@ -1,7 +1,6 @@
 const express = require("express");
 const router = express.Router();
 const { success, error } = require("../helpers/responses");
-const { errorRouterHandler } = require("../middlewares/errorsHandling");
 const validation = require("../middlewares/validationHandler");
 const { loginShemaValidator } = require("../helpers/shemaValidators");
 const { existsUser } = require("../controllers/user");
@@ -9,7 +8,6 @@ const { verifyToken } = require("../helpers/jwt");
 
 function authRouter(app) {
   app.use("/api", router);
-  app.use("/api", errorRouterHandler);
 
   router.post(
     "/login",

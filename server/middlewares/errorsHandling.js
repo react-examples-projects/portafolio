@@ -1,7 +1,7 @@
 const { sendError } = require("../helpers/responses");
 
 function errorRouterHandler(err, req, res, next) {
-  console.log(err.errLog);
+  console.log("ERROR:", err.errLog);
   sendError(res, err.errClient);
 }
 
@@ -17,7 +17,7 @@ function clientErrorHandler(err, req, res, next) {
 }
 
 function errorHandler(err, req, res, next) {
-  console.log(err);
+  console.log("ERROR 2:", err);
   // catch errors while streaming
   if (req.headersSent) {
     next(err);

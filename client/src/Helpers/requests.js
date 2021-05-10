@@ -1,5 +1,5 @@
 import axios from "axios";
-import { LOGIN, USER_INFO} from "../Config/config";
+import { LOGIN, USER_INFO, PROJECTS } from "../Config/config";
 import { getToken } from "./token";
 
 const config = () => ({
@@ -16,5 +16,11 @@ export async function login(data) {
 export async function getUserInfo() {
   if (!getToken()) return null;
   const res = await axios.get(USER_INFO, config());
+  return res?.data?.data;
+}
+
+export async function createProject(payload) {
+  if (!getToken()) return null;
+  const res = await axios.post(PROJECTS, payload, config());
   return res?.data?.data;
 }
