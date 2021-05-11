@@ -2,6 +2,7 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
+import Alert from "react-bootstrap/Alert";
 import { useState } from "react";
 import { createProject } from "../../Helpers/requests";
 import { useMutation } from "react-query";
@@ -20,6 +21,7 @@ export default function CreateProjectModal(props) {
     setValidated(true);
 
     const xhr = await mutation.mutateAsync(new FormData(form));
+    form.reset();
     console.log(xhr);
   };
   return (
@@ -27,6 +29,16 @@ export default function CreateProjectModal(props) {
       <Modal.Header closeButton>
         <Modal.Title>Nuevo proyecto</Modal.Title>
       </Modal.Header>
+      {mutation.isSuccess && (
+        <Alert variant="success" className="rounded-0">
+          Proyecto creado
+        </Alert>
+      )}
+      {mutation.isError && (
+        <Alert variant="danger" className="rounded-0">
+          Ocurrió un error al crear el proyecto
+        </Alert>
+      )}
 
       <Modal.Body>
         <Form validated={validated} onSubmit={handleSubmit} noValidate>

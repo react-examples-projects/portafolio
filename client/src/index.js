@@ -9,8 +9,11 @@ import { ToastContainer } from "react-toastify";
 import { UserProvider } from "./Context/UserContext";
 
 const client = new QueryClient({
-  queries: {
-    refetchOnWindowFocus: false,
+  defaultOptions: {
+    queries: {
+      refetchOnWindowFocus: false,
+      refetchOnMount: false,
+    },
   },
 });
 
@@ -21,7 +24,7 @@ ReactDOM.render(
         <Routers />
       </UserProvider>
     </QueryClientProvider>
-    <ToastContainer autoClose={2500}/>
+    <ToastContainer autoClose={2500} />
   </React.StrictMode>,
   document.getElementById("root")
 );

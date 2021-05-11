@@ -24,3 +24,9 @@ export async function createProject(payload) {
   const res = await axios.post(PROJECTS, payload, config());
   return res?.data?.data;
 }
+
+export async function getProjects() {
+  if (!getToken()) return null;
+  const res = await axios.get(PROJECTS + "s", config());
+  return res?.data?.data;
+}

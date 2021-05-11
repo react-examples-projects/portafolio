@@ -1,10 +1,14 @@
 const ProjectModel = require("../models/Project.js");
 
 async function createProject(payload) {
-   console.log(payload)
   const project = new ProjectModel(payload);
   const data = await project.save();
   return data;
 }
 
-module.exports = { createProject };
+async function getProjects(){
+  const projects = await ProjectModel.find({}).lean();
+  return projects;
+}
+
+module.exports = { createProject, getProjects };

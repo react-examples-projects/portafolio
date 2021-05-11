@@ -12,7 +12,7 @@ export default function Project({
     fontSize: "12px",
   };
   return (
-    <div className="bg-white shadow-sm mb-3" style={{ borderRadius: "10px" }}>
+    <div className="bg-white shadow-sm h-100" style={{ borderRadius: "10px" }}>
       <img
         src="https://picsum.photos/500/300"
         alt="The project"
