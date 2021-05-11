@@ -12,9 +12,12 @@ export default function Projects() {
   const { user } = useUserContext();
 
   return (
-    <Layout justify="justify-content-start" align="align-items-start">
-      <h1 className="my-5 font-weight-bold text-center">Proyectos</h1>
-
+    <Layout className="justify-content-start align-items-start">
+      <h1 className="mt-5 mb-4 font-weight-bold text-center">Proyectos</h1>
+      <p>
+        Una recopilación de proyectos personales y grupales utilizando tecnologías web,
+        mayormente frameworks/librerías enfocadas a javascript:
+      </p>
       {user._id && (
         <>
           <Button variant="success" className="mb-3" onClick={toggleVisible}>

@@ -9,9 +9,9 @@ export default function ProjectList() {
 
   return (
     <Row className=" justify-content-stretch">
-      {projects.data.map((project) => {
+      {projects.data?.map((project) => {
         return (
-          <Col md={6} lg={4} className="mb-3">
+          <Col md={6} lg={4} className="mb-3 px-2" key={project._id}>
             <Project {...project} key={project._id} />
           </Col>
         );

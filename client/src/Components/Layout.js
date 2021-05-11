@@ -3,23 +3,25 @@ import Navbar from "./Navbar";
 import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
-
+import cs from "classnames";
 function Layout({
-  dir = "flex-column",
   children,
-  justify = "justify-content-center",
-  align = "align-items-center",
+  className = "justify-content-center align-items-center",
 }) {
   return (
     <>
-      <Row className=" m-0">
+      <Row className="m-0">
         <Col className="p-0 m-0" md={4} lg={3}>
           <Navbar />
         </Col>
         <Col className="p-0 m-0" md={12} lg={9}>
           <Container
-            className={`d-flex ${dir} ${justify} ${align} px-lg-5 px-1 vh-100`}
+            className={cs(
+              " py-5 flex-column d-flex px-md-3 px-lg-5 px-1 vh-100",
+              className
+            )}
             style={{ overflowY: "auto" }}
+            fluid
           >
             {children}
           </Container>
