@@ -2,10 +2,11 @@ import useProjects from "../Hooks/useProjects";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Project from "./Project";
+import ProjectsLoader from "./Loaders/ProjectsLoader";
 
 export default function ProjectList() {
   const projects = useProjects();
-  if (projects.isLoading) return <h1>Cargando....</h1>;
+  if (projects.isLoading) return <ProjectsLoader />;
 
   return (
     <Row className=" justify-content-stretch">

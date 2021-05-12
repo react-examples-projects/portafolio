@@ -13,12 +13,19 @@ body {
   overflow: hidden;
 }
 
+.skeleton-loader-project > span {
+  display: block;
+  border-radius: 0;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
+}
+
 blockquote {
   font-style: italic;
   margin-left: 1rem;
   font-weight: lighter;
   color: #000;
-  
+
   &::before {
     content: "—“";
   }
