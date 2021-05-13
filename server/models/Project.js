@@ -5,8 +5,8 @@ const ProjectModel = new Schema({
   description: { type: String, required: true, trim: true },
   github: { type: String, trim: true },
   link: { type: String, trim: true },
-  technologies: { type: Array, required: true},
-  date: { type: Date, default: new Date().toLocaleDateString() },
+  technologies: { type: Array, required: true },
+  date: { type: String, default: new Date().toLocaleDateString() },
 });
 
 module.exports = model("Project", ProjectModel);

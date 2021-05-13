@@ -9,7 +9,7 @@ export default function ProjectList() {
   if (projects.isLoading) return <ProjectsLoader />;
 
   return (
-    <Row className=" justify-content-stretch">
+    <Row className="justify-content-stretch">
       {projects.data?.map((project) => {
         return (
           <Col md={6} lg={4} className="mb-3 px-2" key={project._id}>
