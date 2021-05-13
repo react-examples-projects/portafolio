@@ -1,6 +1,6 @@
 import { createContext, useContext, useState, useMemo, useEffect } from "react";
 import { getUserInfo } from "../Helpers/requests";
-import { existsToken } from "../Helpers/token";
+import { existsToken, removeToken } from "../Helpers/token";
 
 const userContext = createContext();
 
@@ -14,7 +14,13 @@ const useUserContext = () => {
 
 const UserProvider = ({ children }) => {
   const [user, setUser] = useState({});
-  const value = useMemo(() => ({ user, setUser }), [user]);
+  const deleteSession = () => {
+    setUser();
+    removeToken();
+    window.location.reload();
+  };
+
+  const value = useMemo(() => ({ user, deleteSession, setUser }), [user]);
   useEffect(() => {
     async function userInfo() {
       try {
@@ -22,7 +28,7 @@ const UserProvider = ({ children }) => {
         if (user) setUser((u) => ({ ...user.user, ...u }));
       } catch (err) {
         console.log(err);
-      }
+      }  
     }
     if (existsToken()) userInfo();
   }, []);

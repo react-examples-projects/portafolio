@@ -9,11 +9,12 @@ import {
 } from "react-icons/fi";
 import navlinks from "../Config/navlinks";
 import css from "../Styles/App.module.scss";
+import { useUserContext } from "../Context/UserContext";
 
 function Navbar() {
   const [isOpen, setOpen] = useState(false);
   const toggleNav = () => setOpen((c) => !c);
-
+  const { deleteSession, user } = useUserContext();
   return (
     <>
       <FiAlignJustify className="nav-icon nav-bars" onClick={toggleNav} />
@@ -27,6 +28,12 @@ function Navbar() {
             {text}
           </NavLink>
         ))}
+        
+        {user._id && (
+          <NavLink to="/" onClick={deleteSession}>
+            Salir
+          </NavLink>
+        )}
 
         <div className={css.socials}>
           <a href="https://github.com/znareak" target="_blank" rel="noreferrer">

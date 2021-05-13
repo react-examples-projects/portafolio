@@ -14,7 +14,7 @@ export default function Project({
   return (
     <div
       className="bg-white shadow-sm h-100"
-      style={{ borderRadius: "10px", maxHeight: "360px", overflowY: "auto" }}
+      style={{ borderRadius: "10px", maxHeight: "370px", overflowY: "auto" }}
     >
       <img
         src={ImagePlaceholder}
@@ -28,7 +28,7 @@ export default function Project({
           borderTopRightRadius: "10px",
         }}
       />
-      <div className="px-4 pb-4 pt-3">
+      <div className="px-4 py-3">
         <h6>{title}</h6>
         <p style={{ fontSize: "12px" }} className="text-muted">
           {description}
@@ -50,6 +50,11 @@ export default function Project({
             Demo
           </a>
         </div>
+        <time className="d-block" dateTime={date}>
+          <small className="text-muted" style={{ fontSize: "12px" }}>
+            Publicado en {date}
+          </small>
+        </time>
       </div>
     </div>
   );
