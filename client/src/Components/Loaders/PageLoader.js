@@ -1,10 +1,10 @@
-import React from 'react'
-import Skeleton, { SkeletonTheme } from "react-skeleton-loading";
+import React from "react";
+import MoonLoader from "react-spinners/MoonLoader";
 
 export default function PageLoader() {
-   return (
-      <div>
-         
-      </div>
-   )
+  return (
+    <div className="vh-100 w-100 d-flex justify-content-center align-items-center">
+      <MoonLoader loading={true} size="90" />
+    </div>
+  );
 }

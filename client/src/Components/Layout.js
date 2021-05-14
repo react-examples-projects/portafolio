@@ -4,6 +4,7 @@ import Col from "react-bootstrap/Col";
 import Row from "react-bootstrap/Row";
 import Container from "react-bootstrap/Container";
 import cs from "classnames";
+
 function Layout({
   children,
   className = "justify-content-center align-items-center",
