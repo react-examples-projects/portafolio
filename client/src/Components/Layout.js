@@ -16,6 +16,7 @@ function Layout({
         </Col>
         <Col className="p-0 m-0" md={12} lg={9}>
           <Container
+            role="main"
             className={cs(
               "py-5 flex-column d-flex px-md-3 px-lg-5 px-1 vh-100",
               className

@@ -7,3 +7,15 @@ export function blobToUrl(blob, cb) {
 
   fr.readAsDataURL(blob);
 }
+
+export const route = (
+  path,
+  { component, redirect = false, layout = true, ...args }
+) => ({
+  path,
+  component,
+  exact: true,
+  layout,
+  redirect,
+  ...args,
+});
