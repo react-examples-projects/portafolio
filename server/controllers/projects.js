@@ -6,8 +6,8 @@ async function createProject(payload) {
   return data;
 }
 
-async function getProjects(){
-  const projects = await ProjectModel.find({}).lean();
+async function getProjects() {
+  const projects = await ProjectModel.find({}).sort({ _id: -1 }).lean();
   return projects;
 }
 

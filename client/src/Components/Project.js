@@ -6,23 +6,20 @@ export default function Project({
   github,
   link,
   technologies = [],
-  date,
+  image,
 }) {
-  const styles = {
-    fontSize: "12px",
-  };
+  const styles = { fontSize: "12px" };
   return (
     <div
       className="bg-white shadow-sm h-100"
       style={{ borderRadius: "10px", maxHeight: "370px", overflowY: "auto" }}
     >
       <img
-        src={ImagePlaceholder}
+        src={image || ImagePlaceholder}
         alt="The project"
         className="img-fluid w-100"
         style={{
           objectFit: "cover",
-          backgroundPositionY: "-12px",
           maxHeight: "200px",
           borderTopLeftRadius: "10px",
           borderTopRightRadius: "10px",
@@ -50,11 +47,6 @@ export default function Project({
             Demo
           </a>
         </div>
-        <time className="d-block" dateTime={date}>
-          <small className="text-muted" style={{ fontSize: "12px" }}>
-            Publicado en {date}
-          </small>
-        </time>
       </div>
     </div>
   );

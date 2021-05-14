@@ -6,13 +6,14 @@ import Alert from "react-bootstrap/Alert";
 import { useState } from "react";
 import { createProject } from "../../Helpers/requests";
 import { useMutation } from "react-query";
+import { blobToUrl } from "../../Helpers/utils";
 
 const label = { fontSize: "15px" };
 export default function CreateProjectModal(props) {
   const [validated, setValidated] = useState(false);
   const mutation = useMutation((data) => createProject(data));
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
     if (form.checkValidity() === false) {
@@ -20,9 +21,14 @@ export default function CreateProjectModal(props) {
     }
     setValidated(true);
 
-    const xhr = await mutation.mutateAsync(new FormData(form));
-    form.reset();
-    console.log(xhr);
+    const fd = new FormData(form);
+    fd.delete("image");
+    blobToUrl(form.image.files[0], async (image) => {
+      if (image) fd.append("image", image);
+      await mutation.mutateAsync(fd);
+      form.reset();
+      setValidated(true);
+    });
   };
   return (
     <Modal {...props} centered>
@@ -64,6 +70,20 @@ export default function CreateProjectModal(props) {
               disabled={mutation.isLoading}
               required
             ></Form.Control>
+          </Form.Group>
+
+          <Form.Group>
+            <Form.Label style={label} htmlFor="image">
+              Elegir imágen del proyecto
+            </Form.Label>
+            <input
+              accept="image/*"
+              type="file"
+              id="image"
+              name="image"
+              className="form-control form-control-sm custom-file"
+              disabled={mutation.isLoading}
+            />
           </Form.Group>
 
           <Form.Row>
