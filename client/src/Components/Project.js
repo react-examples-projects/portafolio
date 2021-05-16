@@ -40,10 +40,22 @@ export default function Project({
         </div>
 
         <div className="d-flex mt-1">
-          <a href={github} style={styles} className="text-muted mr-2">
+          <a
+            href={github}
+            style={styles}
+            className="text-muted mr-2"
+            target="_blank"
+            rel="noreferrer"
+          >
             Repositorio
           </a>
-          <a href={link} style={styles} className="text-muted">
+          <a
+            href={link}
+            style={styles}
+            className="text-muted"
+            target="_blank"
+            rel="noreferrer"
+          >
             Demo
           </a>
         </div>

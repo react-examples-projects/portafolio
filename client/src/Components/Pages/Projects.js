@@ -11,7 +11,7 @@ export default function Projects() {
 
   return (
     <>
-      <h1 className="mt-5 mb-4 font-weight-bold text-center">Proyectos</h1>
+      <h1 className="mt-5 mb-4 font-weight-bold">Proyectos</h1>
       <p>
         Una recopilación de proyectos personales y grupales utilizando
         tecnologías web, mayormente frameworks/librerías enfocadas a javascript:

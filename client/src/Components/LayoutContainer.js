@@ -10,7 +10,7 @@ export default function LayoutContainer({
   const Container = layout ? Layout : Fragment;
   return (
     <Container className={layoutClassName}>
-      <Suspense fallback={<PageLoader />}>
+      <Suspense fallback={<PageLoader />} delayMs={500}>
         <Component />
       </Suspense>
     </Container>
