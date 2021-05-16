@@ -3,10 +3,12 @@ import Row from "react-bootstrap/Row";
 import Image from "react-bootstrap/Image";
 import placeholder from "../../Images/znareak.png";
 import TextMagic from "../TextMagic";
+import Title from "../Titlte";
 
 export default function Home() {
   return (
     <Row className="align-items-center">
+      <Title title="Inicio" />
       <Col md={12} lg={6}>
         <h1 className="mb-4 font-weight-bold">Libardo Rengifo</h1>
         <p className="">

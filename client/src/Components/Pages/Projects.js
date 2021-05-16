@@ -3,6 +3,7 @@ import Button from "react-bootstrap/Button";
 import { useUserContext } from "../../Context/UserContext";
 import CreateProjectModal from "../Modals/CreateProjectModal";
 import ProjectList from "../ProjectList";
+import Title from "../Titlte";
 
 export default function Projects() {
   const [isVisible, setIsVisible] = useState(false);
@@ -11,6 +12,7 @@ export default function Projects() {
 
   return (
     <>
+      <Title title="Proyectos" />
       <h1 className="mt-5 mb-4 font-weight-bold">Proyectos</h1>
       <p>
         Una recopilación de proyectos personales y grupales utilizando

@@ -8,10 +8,12 @@ import mongodb from "../../Images/mongodb.png";
 import Skill from "../Skill";
 import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
+import Title from "../Titlte";
 
 export default function Skills() {
   return (
-    <div>
+    <>
+      <Title title="Habilidades" />
       <h1 className="mt-5 mb-4 font-weight-bold">Habilidades</h1>
       <Row className="align-items-center">
         <Col lg={4}>
@@ -42,6 +44,6 @@ export default function Skills() {
           <Skill title="HTML" image={html} />
         </Col>
       </Row>
-    </div>
+    </>
   );
 }
