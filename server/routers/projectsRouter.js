@@ -18,7 +18,7 @@ function projectsRouter(app) {
     async (req, res) => {
       const payload = req.body;
       const project = await createProject(payload);
-      res.json(success(project, 201));
+      res.status(201).json(success(project, 201));
     }
   );
 }

@@ -4,11 +4,13 @@ import { useUserContext } from "../../Context/UserContext";
 import CreateProjectModal from "../Modals/CreateProjectModal";
 import ProjectList from "../ProjectList";
 import Title from "../Titlte";
+import useProjects from "../../Hooks/useProjects";
 
 export default function Projects() {
   const [isVisible, setIsVisible] = useState(false);
   const toggleVisible = () => setIsVisible(!isVisible);
   const { user } = useUserContext();
+  const projects = useProjects();
 
   return (
     <>
@@ -23,11 +25,15 @@ export default function Projects() {
           <Button variant="success" className="mb-3" onClick={toggleVisible}>
             Agregar proyecto
           </Button>
-          <CreateProjectModal show={isVisible} onHide={toggleVisible} />
+          <CreateProjectModal
+            show={isVisible}
+            onHide={toggleVisible}
+            {...projects}
+          />
         </>
       )}
 
-      <ProjectList />
+      <ProjectList {...projects} />
     </>
   );
 }

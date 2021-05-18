@@ -9,7 +9,8 @@ import { useMutation } from "react-query";
 import { blobToUrl } from "../../Helpers/utils";
 
 const label = { fontSize: "15px" };
-export default function CreateProjectModal(props) {
+
+export default function CreateProjectModal({ setProjects, ...args }) {
   const [validated, setValidated] = useState(false);
   const mutation = useMutation((data) => createProject(data));
 
@@ -19,19 +20,26 @@ export default function CreateProjectModal(props) {
     if (form.checkValidity() === false) {
       return e.stopPropagation();
     }
+
     setValidated(true);
 
     const fd = new FormData(form);
     fd.delete("image");
+    console.log("enviando :D");
     blobToUrl(form.image.files[0], async (image) => {
       if (image) fd.append("image", image);
-      await mutation.mutateAsync(fd);
-      form.reset();
-      setValidated(true);
+      console.log("enviando datos");
+      try {
+        const newProject = await mutation.mutateAsync(fd);
+        setProjects((projects) => [newProject, ...projects]);
+        form.reset();
+      } catch (error) {
+        console.log(error);
+      }
     });
   };
   return (
-    <Modal {...props} centered>
+    <Modal {...args} centered>
       <Modal.Header closeButton>
         <Modal.Title>Nuevo proyecto</Modal.Title>
       </Modal.Header>

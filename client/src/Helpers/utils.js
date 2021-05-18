@@ -1,10 +1,7 @@
 export function blobToUrl(blob, cb) {
-  if (!blob) return null;
+  if (!blob) return cb(null);
   const fr = new FileReader();
-  fr.onload = () => {
-    cb(fr.result);
-  };
-
+  fr.onload = () => cb(fr.result);
   fr.readAsDataURL(blob);
 }
 

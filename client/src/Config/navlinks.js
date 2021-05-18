@@ -4,6 +4,5 @@ const links = [
   link("/proyectos", "proyectos"),
   link("/habilidades", "Habilidades"),
   link("/contacto", "Contacto"),
-  link("/login", "Login"),
 ];
 export default links;
