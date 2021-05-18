@@ -21,7 +21,7 @@ app.use(fileUpload());
 app.use(morgan("dev"));
 app.use(cors());
 app.use(express.static(__dirname + "/uploads"));
- 
+   
 // routes middlewares
 authRouter(app);
 userRouter(app);
