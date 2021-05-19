@@ -11,7 +11,7 @@ export default function ProjectList({ projects, isLoading, setProjects }) {
       {projects?.map((project) => {
         return (
           <Col md={6} lg={4} className="mb-3 px-2" key={project._id}>
-            <Project {...project} key={project._id} />
+            <Project {...project} key={project._id} setProjects={setProjects}/>
           </Col>
         );
       })}

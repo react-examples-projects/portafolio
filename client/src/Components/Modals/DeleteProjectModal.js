@@ -2,25 +2,36 @@ import Modal from "react-bootstrap/Modal";
 import Button from "react-bootstrap/Button";
 import { useMutation } from "react-query";
 import { deleteProject } from "../../Helpers/requests";
+import { toast } from "react-toastify";
 import React from "react";
 
 export default function DeleteProjectModal({
   id,
   isVisibleDeleteModal,
-  setVisibleDeleteModal,
+  toggleDeleteModal,
   title,
+  setProjects,
 }) {
   const mutation = useMutation((id) => deleteProject(id));
 
   const deleteProjectOnclick = async () => {
-    const data = await mutation.mutateAsync(id);
-    console.log(data);
+    try {
+      await mutation.mutateAsync(id);
+      toggleDeleteModal();
+      toast.success("Proyecto eliminado");
+      setProjects((projects) => {
+        const projectsFilter = projects.filter((project) => project._id !== id);
+        return projectsFilter;
+      });
+    } catch {
+      toast.error("Ocurrió un error al eliminar el proyecto");
+    }
   };
 
   return (
     <Modal
       show={isVisibleDeleteModal}
-      onHide={setVisibleDeleteModal}
+      onHide={toggleDeleteModal}
       backdrop="static"
       centered
     >

@@ -25,10 +25,8 @@ export default function CreateProjectModal({ setProjects, ...args }) {
 
     const fd = new FormData(form);
     fd.delete("image");
-    console.log("enviando :D");
     blobToUrl(form.image.files[0], async (image) => {
       if (image) fd.append("image", image);
-      console.log("enviando datos");
       try {
         const newProject = await mutation.mutateAsync(fd);
         setProjects((projects) => [newProject, ...projects]);

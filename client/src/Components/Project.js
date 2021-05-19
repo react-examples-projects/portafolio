@@ -14,6 +14,7 @@ export default function Project({
   link,
   technologies = [],
   image,
+  setProjects,
 }) {
   const styles = { fontSize: "12px" };
   const { user } = useUserContext();
@@ -87,7 +88,7 @@ export default function Project({
 
       <DeleteProjectModal
         id={_id}
-        {...{ isVisibleDeleteModal, setVisibleDeleteModal, title }}
+        {...{ isVisibleDeleteModal, toggleDeleteModal, title, setProjects }}
       />
     </div>
   );
