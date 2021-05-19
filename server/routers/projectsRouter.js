@@ -3,7 +3,12 @@ const router = express.Router();
 const { success } = require("../helpers/responses");
 const validation = require("../middlewares/validationHandler");
 const { projectCreateShemaValidator } = require("../helpers/shemaValidators");
-const { createProject, getProjects } = require("../controllers/projects");
+const {
+  createProject,
+  getProjects,
+  deleteProject,
+} = require("../controllers/projects");
+
 function projectsRouter(app) {
   app.use("/api", router);
 
@@ -21,6 +26,12 @@ function projectsRouter(app) {
       res.status(201).json(success(project, 201));
     }
   );
+
+  router.delete("/project", async (req, res) => {
+    const id = req.query.id;
+    const projectDeleted = await deleteProject(id);
+    res.json(success(projectDeleted));
+  });
 }
 
 module.exports = projectsRouter;

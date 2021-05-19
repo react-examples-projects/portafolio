@@ -11,4 +11,9 @@ async function getProjects() {
   return projects;
 }
 
-module.exports = { createProject, getProjects };
+async function deleteProject(_id) {
+  const projectDeleted = await ProjectModel.deleteOne({ _id });
+  return projectDeleted;
+}
+
+module.exports = { createProject, getProjects, deleteProject };

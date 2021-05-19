@@ -3,7 +3,7 @@ import Col from "react-bootstrap/Col";
 import Project from "./Project";
 import ProjectsLoader from "./Loaders/ProjectsLoader";
 
-export default function ProjectList({ projects, isLoading }) {
+export default function ProjectList({ projects, isLoading, setProjects }) {
   if (isLoading) return <ProjectsLoader />;
 
   return (

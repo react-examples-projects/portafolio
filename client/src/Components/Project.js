@@ -1,6 +1,13 @@
 import Badge from "react-bootstrap/Badge";
+import Button from "react-bootstrap/Button";
 import ImagePlaceholder from "../Images/placeholder.png";
+import { useUserContext } from "../Context/UserContext";
+import { BiTrash, BiEditAlt } from "react-icons/bi";
+import DeleteProjectModal from "./Modals/DeleteProjectModal";
+import { useState } from "react";
+
 export default function Project({
+  _id,
   title,
   description,
   github,
@@ -9,6 +16,10 @@ export default function Project({
   image,
 }) {
   const styles = { fontSize: "12px" };
+  const { user } = useUserContext();
+  const [isVisibleDeleteModal, setVisibleDeleteModal] = useState(false);
+  const toggleDeleteModal = () => setVisibleDeleteModal(!isVisibleDeleteModal);
+
   return (
     <div
       className="bg-white shadow-sm h-100"
@@ -39,7 +50,7 @@ export default function Project({
           ))}
         </div>
 
-        <div className="d-flex mt-1">
+        <div className="d-flex my-1">
           <a
             href={github}
             style={styles}
@@ -59,7 +70,25 @@ export default function Project({
             Demo
           </a>
         </div>
+
+        {user._id && (
+          <div className="d-flex">
+            <Button variant="link" size="sm" onClick={toggleDeleteModal}>
+              <span className="text-danger mr-1">Eliminar</span>
+              <BiTrash style={{ fill: "#dc3545" }} />
+            </Button>
+            <Button variant="link" size="sm">
+              <span className="text-primary mr-1">Editar</span>
+              <BiEditAlt style={{ fill: "#007bff" }} />
+            </Button>
+          </div>
+        )}
       </div>
+
+      <DeleteProjectModal
+        id={_id}
+        {...{ isVisibleDeleteModal, setVisibleDeleteModal, title }}
+      />
     </div>
   );
 }

@@ -39,7 +39,7 @@ export default function CreateProjectModal({ setProjects, ...args }) {
     });
   };
   return (
-    <Modal {...args} centered>
+    <Modal {...args} backdrop="static" centered>
       <Modal.Header closeButton>
         <Modal.Title>Nuevo proyecto</Modal.Title>
       </Modal.Header>

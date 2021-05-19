@@ -5,6 +5,7 @@ import CreateProjectModal from "../Modals/CreateProjectModal";
 import ProjectList from "../ProjectList";
 import Title from "../Titlte";
 import useProjects from "../../Hooks/useProjects";
+import ErrorFetchingProjects from "../Errors/ErrorFetchingProjects";
 
 export default function Projects() {
   const [isVisible, setIsVisible] = useState(false);
@@ -28,12 +29,16 @@ export default function Projects() {
           <CreateProjectModal
             show={isVisible}
             onHide={toggleVisible}
-            {...projects}
+            setProjects={projects.setProjects}
           />
         </>
       )}
 
-      <ProjectList {...projects} />
+      {projects.isError ? (
+        <ErrorFetchingProjects />
+      ) : (
+        <ProjectList {...projects} />
+      )}
     </>
   );
 }

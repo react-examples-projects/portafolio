@@ -29,3 +29,9 @@ export async function getProjects() {
   const res = await axios.get(PROJECTS + "s");
   return res?.data?.data;
 }
+
+export async function deleteProject(id) {
+  if (!getToken()) return null;
+  const res = await axios.delete(`${PROJECTS}?id=${id}`, config());
+  return res?.data?.data;
+}
