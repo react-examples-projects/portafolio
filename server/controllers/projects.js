@@ -16,4 +16,9 @@ async function deleteProject(_id) {
   return projectDeleted;
 }
 
-module.exports = { createProject, getProjects, deleteProject };
+async function updateProject({ id: _id, ...payload }) {
+  const projectUpdated = await ProjectModel.findByIdAndUpdate({ _id }, payload);
+  return projectUpdated;
+}
+
+module.exports = { createProject, getProjects, deleteProject, updateProject };

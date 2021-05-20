@@ -4,6 +4,7 @@ import ImagePlaceholder from "../Images/placeholder.png";
 import { useUserContext } from "../Context/UserContext";
 import { BiTrash, BiEditAlt } from "react-icons/bi";
 import DeleteProjectModal from "./Modals/DeleteProjectModal";
+import UpdateProjectModal from "./Modals/UpdateProjectModal";
 import { useState } from "react";
 
 export default function Project({
@@ -19,7 +20,9 @@ export default function Project({
   const styles = { fontSize: "12px" };
   const { user } = useUserContext();
   const [isVisibleDeleteModal, setVisibleDeleteModal] = useState(false);
+  const [isVisibleUpdateModal, setVisibleUpdateModal] = useState(false);
   const toggleDeleteModal = () => setVisibleDeleteModal(!isVisibleDeleteModal);
+  const toggleUpdateModal = () => setVisibleUpdateModal(!isVisibleUpdateModal);
 
   return (
     <div
@@ -78,7 +81,7 @@ export default function Project({
               <span className="text-danger mr-1">Eliminar</span>
               <BiTrash style={{ fill: "#dc3545" }} />
             </Button>
-            <Button variant="link" size="sm">
+            <Button variant="link" size="sm" onClick={toggleUpdateModal}>
               <span className="text-primary mr-1">Editar</span>
               <BiEditAlt style={{ fill: "#007bff" }} />
             </Button>
@@ -89,6 +92,20 @@ export default function Project({
       <DeleteProjectModal
         id={_id}
         {...{ isVisibleDeleteModal, toggleDeleteModal, title, setProjects }}
+      />
+      <UpdateProjectModal
+        {...{
+          _id,
+          title,
+          description,
+          github,
+          link,
+          technologies,
+          image,
+          setProjects,
+          isVisibleUpdateModal,
+          toggleUpdateModal,
+        }}
       />
     </div>
   );

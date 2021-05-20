@@ -35,3 +35,9 @@ export async function deleteProject(id) {
   const res = await axios.delete(`${PROJECTS}?id=${id}`, config());
   return res?.data?.data;
 }
+
+export async function updateProject({ _id: id, data }) {
+  if (!getToken()) return null;
+  const res = await axios.put(`${PROJECTS}?id=${id}`, data, config());
+  return res?.data?.data;
+}

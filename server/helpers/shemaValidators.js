@@ -17,4 +17,12 @@ const projectCreateShemaValidator = Joi.object({
   image: Joi.string(),
 });
 
-module.exports = { loginShemaValidator, projectCreateShemaValidator };
+const projectDeleteShemaValidor = Joi.object({
+  id: Joi.string().required(),
+});
+
+module.exports = {
+  loginShemaValidator,
+  projectCreateShemaValidator,
+  projectDeleteShemaValidor,
+};

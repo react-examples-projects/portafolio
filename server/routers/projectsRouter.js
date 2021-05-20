@@ -2,11 +2,15 @@ const express = require("express");
 const router = express.Router();
 const { success } = require("../helpers/responses");
 const validation = require("../middlewares/validationHandler");
-const { projectCreateShemaValidator } = require("../helpers/shemaValidators");
+const {
+  projectCreateShemaValidator,
+  projectDeleteShemaValidor,
+} = require("../helpers/shemaValidators");
 const {
   createProject,
   getProjects,
   deleteProject,
+  updateProject,
 } = require("../controllers/projects");
 
 function projectsRouter(app) {
@@ -27,10 +31,20 @@ function projectsRouter(app) {
     }
   );
 
-  router.delete("/project", async (req, res) => {
+  router.delete(
+    "/project",
+    validation(projectDeleteShemaValidor, "query"),
+    async (req, res) => {
+      const id = req.query.id;
+      const projectDeleted = await deleteProject(id);
+      res.json(success(projectDeleted));
+    }
+  );
+
+  router.put("/project", async (req, res) => {
     const id = req.query.id;
-    const projectDeleted = await deleteProject(id);
-    res.json(success(projectDeleted));
+    const projectUpdated = await updateProject({ id, ...req.body });
+    res.json(success(projectUpdated));
   });
 }
 

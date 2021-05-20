@@ -3,34 +3,37 @@ import Modal from "react-bootstrap/Modal";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
 import Alert from "react-bootstrap/Alert";
-import { useState } from "react";
-import { createProject } from "../../Helpers/requests";
+import { updateProject } from "../../Helpers/requests";
 import { useMutation } from "react-query";
 import { blobToUrl } from "../../Helpers/utils";
 import { WEB_TECHNOLOGIES } from "../../Config/config";
 
 const label = { fontSize: "15px" };
 
-export default function CreateProjectModal({ setProjects, ...args }) {
-  const [validated, setValidated] = useState(false);
-  const mutation = useMutation((data) => createProject(data));
+export default function UpdateProjectModal({
+  _id,
+  title,
+  description,
+  github,
+  link,
+  technologies,
+  image,
+  setProjects,
+  isVisibleUpdateModal,
+  toggleUpdateModal,
+}) {
+  const mutation = useMutation((data) => updateProject(data));
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
-    if (form.checkValidity() === false) {
-      return e.stopPropagation();
-    }
-
-    setValidated(true);
-
-    const fd = new FormData(form);
-    fd.delete("image");
-    blobToUrl(form.image.files[0], async (image) => {
-      if (image) fd.append("image", image);
+    const data = new FormData(form);
+    data.delete("image");
+    blobToUrl(form.image.files[0], async (img) => {
+      data.append("image", img || image);
       try {
-        const newProject = await mutation.mutateAsync(fd);
-        setProjects((projects) => [newProject, ...projects]);
+        const newProject = await mutation.mutateAsync({ _id, data });
+        //setProjects((projects) => [newProject, ...projects]);
         form.reset();
       } catch (error) {
         console.log(error);
@@ -38,23 +41,28 @@ export default function CreateProjectModal({ setProjects, ...args }) {
     });
   };
   return (
-    <Modal {...args} backdrop="static" centered>
+    <Modal
+      show={isVisibleUpdateModal}
+      onHide={toggleUpdateModal}
+      backdrop="static"
+      centered
+    >
       <Modal.Header closeButton>
-        <Modal.Title>Nuevo proyecto</Modal.Title>
+        <Modal.Title>Editar Projecto</Modal.Title>
       </Modal.Header>
       {mutation.isSuccess && (
         <Alert variant="success" className="rounded-0">
-          Proyecto creado
+          Proyecto editado
         </Alert>
       )}
       {mutation.isError && (
         <Alert variant="danger" className="rounded-0">
-          Ocurrió un error al crear el proyecto
+          Ocurrió un error al editar el proyecto
         </Alert>
       )}
 
       <Modal.Body>
-        <Form validated={validated} onSubmit={handleSubmit} noValidate>
+        <Form onSubmit={handleSubmit} noValidate>
           <Form.Group controlId="title">
             <Form.Label style={label}>Título</Form.Label>
             <Form.Control
@@ -62,6 +70,7 @@ export default function CreateProjectModal({ setProjects, ...args }) {
               type="text"
               name="title"
               placeholder="Título del proyecto"
+              defaultValue={title}
               disabled={mutation.isLoading}
               required
             ></Form.Control>
@@ -74,6 +83,7 @@ export default function CreateProjectModal({ setProjects, ...args }) {
               as="textarea"
               name="description"
               placeholder="Descripción del proyecto"
+              defaultValue={description}
               disabled={mutation.isLoading}
               required
             ></Form.Control>
@@ -102,6 +112,7 @@ export default function CreateProjectModal({ setProjects, ...args }) {
                   type="url"
                   name="github"
                   placeholder="Github del proyecto"
+                  defaultValue={github}
                   disabled={mutation.isLoading}
                   required
                 ></Form.Control>
@@ -116,6 +127,7 @@ export default function CreateProjectModal({ setProjects, ...args }) {
                   type="url"
                   name="link"
                   placeholder="Link del proyecto"
+                  defaultValue={link}
                   disabled={mutation.isLoading}
                   required
                 ></Form.Control>
@@ -136,7 +148,11 @@ export default function CreateProjectModal({ setProjects, ...args }) {
               multiple
             >
               {WEB_TECHNOLOGIES.map((op) => (
-                <option key={op} value={op}>
+                <option
+                  key={op}
+                  value={op}
+                  selected={technologies.includes(op)}
+                >
                   {op}
                 </option>
               ))}
@@ -149,7 +165,9 @@ export default function CreateProjectModal({ setProjects, ...args }) {
             disabled={mutation.isLoading}
             block
           >
-            {mutation.isLoading ? "Creando proyecto..." : "Crear proyecto"}
+            {mutation.isLoading
+              ? "Actualizando proyecto..."
+              : "Actualizar proyecto"}
           </Button>
         </Form>
       </Modal.Body>
