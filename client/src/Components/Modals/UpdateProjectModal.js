@@ -7,6 +7,7 @@ import { updateProject } from "../../Helpers/requests";
 import { useMutation } from "react-query";
 import { blobToUrl } from "../../Helpers/utils";
 import { WEB_TECHNOLOGIES } from "../../Config/config";
+import { useState } from "react";
 
 const label = { fontSize: "15px" };
 
@@ -23,18 +24,31 @@ export default function UpdateProjectModal({
   toggleUpdateModal,
 }) {
   const mutation = useMutation((data) => updateProject(data));
+  const [techno, setTechno] = useState(technologies);
+  const onChange = (e) => {
+    setTechno(
+      [...e.target.options].filter((op) => op.selected).map((op) => op.value)
+    );
+  };
 
   const handleSubmit = (e) => {
     e.preventDefault();
     const form = e.target;
     const data = new FormData(form);
-    data.delete("image");
     blobToUrl(form.image.files[0], async (img) => {
-      data.append("image", img || image);
+      data.set("image", img || image);
       try {
-        const newProject = await mutation.mutateAsync({ _id, data });
-        //setProjects((projects) => [newProject, ...projects]);
-        form.reset();
+        await mutation.mutateAsync({ _id, data });
+        setProjects((projects) => {
+          const editedValues = Object.fromEntries(data.entries());
+          editedValues.technologies = techno;
+          editedValues._id = _id;
+          const copy = [...projects];
+          let index = copy.findIndex((p) => p._id === _id);
+          copy[index] = editedValues;
+          console.log(copy);
+          return copy;
+        });
       } catch (error) {
         console.log(error);
       }
@@ -144,15 +158,13 @@ export default function UpdateProjectModal({
               placeholder="Tecnologías del proyecto"
               style={{ height: "150px" }}
               disabled={mutation.isLoading}
+              onChange={onChange}
+              value={techno}
               required
               multiple
             >
               {WEB_TECHNOLOGIES.map((op) => (
-                <option
-                  key={op}
-                  value={op}
-                  selected={technologies.includes(op)}
-                >
+                <option key={op} value={op}>
                   {op}
                 </option>
               ))}
