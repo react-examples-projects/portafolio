@@ -26,7 +26,7 @@ export default function Project({
 
   return (
     <div
-      className="bg-white shadow-sm h-100"
+      className="bg-white shadow-sm h-100 w-100"
       style={{ borderRadius: "10px", maxHeight: "370px", overflowY: "auto" }}
     >
       <img

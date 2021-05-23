@@ -2,12 +2,12 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import Alert from "react-bootstrap/Alert";
 import { useState } from "react";
 import { createProject } from "../../Helpers/requests";
 import { useMutation } from "react-query";
 import { blobToUrl } from "../../Helpers/utils";
 import { WEB_TECHNOLOGIES } from "../../Config/config";
+import { toast } from "react-toastify";
 
 const label = { fontSize: "15px" };
 
@@ -30,8 +30,9 @@ export default function CreateProjectModal({ setProjects, ...args }) {
       try {
         const newProject = await mutation.mutateAsync(fd);
         setProjects((projects) => [newProject, ...projects]);
-        form.reset();
+        toast.success("Proyecto creado");
       } catch (error) {
+        toast.error("Ocurrió un error al crear el proyecto");
         console.log(error);
       }
     });
@@ -41,17 +42,6 @@ export default function CreateProjectModal({ setProjects, ...args }) {
       <Modal.Header closeButton>
         <Modal.Title>Nuevo proyecto</Modal.Title>
       </Modal.Header>
-      {mutation.isSuccess && (
-        <Alert variant="success" className="rounded-0">
-          Proyecto creado
-        </Alert>
-      )}
-      {mutation.isError && (
-        <Alert variant="danger" className="rounded-0">
-          Ocurrió un error al crear el proyecto
-        </Alert>
-      )}
-
       <Modal.Body>
         <Form validated={validated} onSubmit={handleSubmit} noValidate>
           <Form.Group controlId="title">

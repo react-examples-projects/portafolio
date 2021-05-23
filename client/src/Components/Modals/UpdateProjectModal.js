@@ -2,12 +2,12 @@ import Form from "react-bootstrap/Form";
 import Modal from "react-bootstrap/Modal";
 import Col from "react-bootstrap/Col";
 import Button from "react-bootstrap/Button";
-import Alert from "react-bootstrap/Alert";
 import { updateProject } from "../../Helpers/requests";
 import { useMutation } from "react-query";
 import { blobToUrl } from "../../Helpers/utils";
 import { WEB_TECHNOLOGIES } from "../../Config/config";
 import { useState } from "react";
+import { toast } from "react-toastify";
 
 const label = { fontSize: "15px" };
 
@@ -46,10 +46,11 @@ export default function UpdateProjectModal({
           const copy = [...projects];
           let index = copy.findIndex((p) => p._id === _id);
           copy[index] = editedValues;
-          console.log(copy);
           return copy;
         });
+        toast.success("Proyecto editado");
       } catch (error) {
+        toast.error("Ocurrió un error al actualizar el proyecto");
         console.log(error);
       }
     });
@@ -64,16 +65,6 @@ export default function UpdateProjectModal({
       <Modal.Header closeButton>
         <Modal.Title>Editar Projecto</Modal.Title>
       </Modal.Header>
-      {mutation.isSuccess && (
-        <Alert variant="success" className="rounded-0">
-          Proyecto editado
-        </Alert>
-      )}
-      {mutation.isError && (
-        <Alert variant="danger" className="rounded-0">
-          Ocurrió un error al editar el proyecto
-        </Alert>
-      )}
 
       <Modal.Body>
         <Form onSubmit={handleSubmit} noValidate>

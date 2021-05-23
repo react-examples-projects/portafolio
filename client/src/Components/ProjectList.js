@@ -7,11 +7,17 @@ export default function ProjectList({ projects, isLoading, setProjects }) {
   if (isLoading) return <ProjectsLoader />;
 
   return (
-    <Row className="justify-content-stretch">
+    <Row>
       {projects?.map((project) => {
         return (
-          <Col md={6} lg={4} className="mb-3 px-2" key={project._id}>
-            <Project {...project} key={project._id} setProjects={setProjects}/>
+          <Col
+            sm={12}
+            md={6}
+            lg={4}
+            className="mb-3 px-2 w-100"
+            key={project._id}
+          >
+            <Project {...project} key={project._id} setProjects={setProjects} />
           </Col>
         );
       })}
