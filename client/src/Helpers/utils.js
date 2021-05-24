@@ -21,23 +21,20 @@ export const route = (
   ...args,
 });
 
-export async function sendForm(e) {
-  e.preventDefault();
+export async function sendForm(data) {
   try {
-    const email = await emailjs.sendForm(
+    const email = await emailjs.send(
       EMAILJS.SERVICE_ID,
       EMAILJS.TEMPLATE_ID,
-      e.target,
+      data,
       EMAILJS.USER_ID
     );
-    e.target.reset();
+
     if (email.status === 200) {
       toast.success("Formulario enviado");
     } else {
       toast.error("Ocurrió un error al enviar, estado: " + email.status);
     }
-
-    console.log(email);
   } catch (error) {
     toast.error("Ocurrió un error al enviar el formulario");
     console.log(error);
