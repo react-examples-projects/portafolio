@@ -55,24 +55,29 @@ export default function Project({
         </div>
 
         <div className="d-flex my-1">
-          <a
-            href={github}
-            style={styles}
-            className="text-muted mr-2"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Repositorio
-          </a>
-          <a
-            href={link}
-            style={styles}
-            className="text-muted"
-            target="_blank"
-            rel="noreferrer"
-          >
-            Demo
-          </a>
+          {github && (
+            <a
+              href={github}
+              style={styles}
+              className="text-muted mr-2"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Repositorio
+            </a>
+          )}
+
+          {link && (
+            <a
+              href={link}
+              style={styles}
+              className="text-muted"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Demo
+            </a>
+          )}
         </div>
 
         {user._id && (
