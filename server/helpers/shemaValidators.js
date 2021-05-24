@@ -8,8 +8,8 @@ const loginShemaValidator = Joi.object({
 const projectCreateShemaValidator = Joi.object({
   title: Joi.string().required(),
   description: Joi.string().required(),
-  github: Joi.string().uri().required(),
-  link: Joi.string().uri().required(),
+  github: Joi.string().uri(),
+  link: Joi.string().uri(),
   technologies: Joi.alternatives().try(
     Joi.string().required(),
     Joi.array().required()
