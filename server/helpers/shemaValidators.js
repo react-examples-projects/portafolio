@@ -9,7 +9,7 @@ const projectCreateShemaValidator = Joi.object({
   title: Joi.string().required(),
   description: Joi.string().required(),
   github: Joi.string().uri().required().allow(""),
-  link: Joi.string().uri()().required().allow(""),
+  link: Joi.string().uri().required().allow(""),
   technologies: Joi.alternatives().try(
     Joi.string().required(),
     Joi.array().required()
