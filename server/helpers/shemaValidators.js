@@ -8,13 +8,24 @@ const loginShemaValidator = Joi.object({
 const projectCreateShemaValidator = Joi.object({
   title: Joi.string().required(),
   description: Joi.string().required(),
-  github: Joi.string().uri(),
-  link: Joi.string().uri(),
+  github: Joi.string().uri().optional(),
+  link: Joi.string().uri().optional(),
   technologies: Joi.alternatives().try(
     Joi.string().required(),
     Joi.array().required()
   ),
-  image: Joi.string(),
+  image: Joi.string().optional(),
+});
+
+const projectUpdateShemaValidator = Joi.object({
+  title: Joi.string().optional(),
+  description: Joi.string().optional(),
+  github: Joi.string().uri().optional(),
+  link: Joi.string().uri().optional(),
+  technologies: Joi.alternatives()
+    .try(Joi.string().required(), Joi.array().required())
+    .optional(),
+  image: Joi.string().optional(),
 });
 
 const projectDeleteShemaValidor = Joi.object({
@@ -24,5 +35,6 @@ const projectDeleteShemaValidor = Joi.object({
 module.exports = {
   loginShemaValidator,
   projectCreateShemaValidator,
+  projectUpdateShemaValidator,
   projectDeleteShemaValidor,
 };

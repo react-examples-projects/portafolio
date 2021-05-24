@@ -63,7 +63,7 @@ export default function UpdateProjectModal({
       centered
     >
       <Modal.Header closeButton>
-        <Modal.Title>Editar Projecto</Modal.Title>
+        <Modal.Title>Editar Proyecto</Modal.Title>
       </Modal.Header>
 
       <Modal.Body>

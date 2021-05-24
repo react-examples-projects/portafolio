@@ -4,6 +4,7 @@ const { success } = require("../helpers/responses");
 const validation = require("../middlewares/validationHandler");
 const {
   projectCreateShemaValidator,
+  projectUpdateShemaValidator,
   projectDeleteShemaValidor,
 } = require("../helpers/shemaValidators");
 const {
@@ -41,11 +42,15 @@ function projectsRouter(app) {
     }
   );
 
-  router.put("/project", async (req, res) => {
-    const id = req.query.id;
-    const projectUpdated = await updateProject({ id, ...req.body });
-    res.json(success(projectUpdated));
-  });
+  router.put(
+    "/project",
+    validation(projectUpdateShemaValidator),
+    async (req, res) => {
+      const id = req.query.id;
+      const projectUpdated = await updateProject({ id, ...req.body });
+      res.json(success(projectUpdated));
+    }
+  );
 }
 
 module.exports = projectsRouter;
