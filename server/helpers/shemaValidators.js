@@ -8,24 +8,25 @@ const loginShemaValidator = Joi.object({
 const projectCreateShemaValidator = Joi.object({
   title: Joi.string().required(),
   description: Joi.string().required(),
-  github: Joi.string().uri().optional(),
-  link: Joi.string().uri().optional(),
+  github: Joi.string().uri().required().allow(""),
+  link: Joi.string().uri()().required().allow(""),
   technologies: Joi.alternatives().try(
     Joi.string().required(),
     Joi.array().required()
   ),
-  image: Joi.string().optional(),
+  image: Joi.string(),
 });
 
 const projectUpdateShemaValidator = Joi.object({
-  title: Joi.string().optional(),
-  description: Joi.string().optional(),
-  github: Joi.string().uri().optional(),
-  link: Joi.string().uri().optional(),
-  technologies: Joi.alternatives()
-    .try(Joi.string().required(), Joi.array().required())
-    .optional(),
-  image: Joi.string().optional(),
+  title: Joi.string(),
+  description: Joi.string(),
+  github: Joi.string().uri().required().allow(""),
+  link: Joi.string().uri().required().allow(""),
+  technologies: Joi.alternatives().try(
+    Joi.string().required(),
+    Joi.array().required()
+  ),
+  image: Joi.string(),
 });
 
 const projectDeleteShemaValidor = Joi.object({
