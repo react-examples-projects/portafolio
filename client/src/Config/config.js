@@ -15,6 +15,7 @@ const WEB_TECHNOLOGIES = [
   "SASS",
   "ExpressJS",
   "MongoDB + Mongoose",
+  "PHP"
 ];
 
 // email config

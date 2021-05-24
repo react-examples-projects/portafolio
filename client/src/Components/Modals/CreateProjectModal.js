@@ -92,7 +92,6 @@ export default function CreateProjectModal({ setProjects, ...args }) {
                   name="github"
                   placeholder="Github del proyecto"
                   disabled={mutation.isLoading}
-                  required
                 ></Form.Control>
               </Form.Group>
             </Col>
@@ -106,7 +105,6 @@ export default function CreateProjectModal({ setProjects, ...args }) {
                   name="link"
                   placeholder="Link del proyecto"
                   disabled={mutation.isLoading}
-                  required
                 ></Form.Control>
               </Form.Group>
             </Col>
