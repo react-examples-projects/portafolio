@@ -19,10 +19,10 @@ function Layout({
           <Container
             role="main"
             className={cs(
-              "py-5 flex-column d-flex px-md-3 px-lg-5 px-1 vh-100",
+              "py-5 flex-column d-flex px-lg-5 px-3 vh-100",
               className
             )}
-            style={{ overflowY: "auto" }}
+            style={{ overflow: "hidden auto" }}
             fluid
           >
             {children}

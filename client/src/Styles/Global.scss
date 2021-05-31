@@ -21,14 +21,12 @@ body {
   background: rgba(136, 136, 136, 0.575);
 }
 
-
 #root {
   max-height: 100vh;
   max-width: 1450px;
   margin: 0 auto;
   overflow: hidden;
 }
-
 
 .skeleton-loader-project > span {
   display: block;
@@ -91,6 +89,11 @@ blockquote {
   left: 1rem;
   top: 1rem;
   z-index: 500;
+  background: #eee;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.13);
+  border-radius: 50%;
+  padding: 0.5rem;
+  font-size: 3.5rem;
 }
 
 .nav-close {
@@ -125,5 +128,11 @@ blockquote {
 
   nav.nav-closed {
     left: -20rem;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .app {
+    margin-top: 12rem;
   }
 }

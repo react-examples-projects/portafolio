@@ -7,10 +7,12 @@ import Title from "../Titlte";
 
 export default function Home() {
   return (
-    <Row className="align-items-center">
+    <Row className="align-items-center app">
       <Title title="Inicio" />
       <Col md={12} lg={6}>
-        <h1 className="mb-4 font-weight-bold">Libardo Rengifo</h1>
+        <h1 className="mb-4 font-weight-bold text-center text-md-left text-lg-left">
+          Libardo Rengifo
+        </h1>
         <p className="">
           Desarrollador web junior en
           <TextMagic text="ReactJS" />, <TextMagic text="NodeJS" /> y
@@ -24,7 +26,11 @@ export default function Home() {
         </blockquote>
       </Col>
       <Col md={12} lg={6}>
-        <Image src={placeholder} className="rounded-circle" fluid />
+        <Image
+          src={placeholder}
+          className="rounded-circle d-block mx-auto mx-md-0 mx-lg-0"
+          fluid
+        />
       </Col>
     </Row>
   );

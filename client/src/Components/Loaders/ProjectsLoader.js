@@ -26,7 +26,7 @@ function ProjectLoader() {
 
 export default function ProjectsLoader() {
   return (
-    <div className="w-100 row">
+    <div className="row">
       {items.map((_, i) => (
         <Col md={6} lg={4} className="mb-3 px-2" key={i}>
           <ProjectLoader />
