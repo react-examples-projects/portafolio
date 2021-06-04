@@ -2,7 +2,7 @@
 [![Documentation](https://img.shields.io/badge/documentation-yes-brightgreen.svg)](https://github.com/react-testing/portafolio)
 [![Twitter: libardo\_r12](https://img.shields.io/twitter/follow/libardo\_r12.svg?style=social)](https://twitter.com/libardo\_r12)
 
-> Mi portafolio con mis habilidades 💼
+> Welcome to my personal portfolio 💼
 
 ### 🏠 [Homepage](https://github.com/react-testing/portafolio)
 
