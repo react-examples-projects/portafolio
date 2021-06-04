@@ -6,7 +6,7 @@ MONGO.connect(DB, {
 }).catch((err) => {
   console.log("Al intentar conectar ocurrio un error: " + err);
 });
-
+ 
 CON.on("open", () => {
   console.log("Conectado a la base de de datos: " + DB);
 });
