@@ -3,7 +3,7 @@ import { NavLink } from "react-router-dom";
 import {
   FiGithub,
   FiLinkedin,
-  FiLinkedin,
+  FiLink,
   FiChevronsLeft,
   FiAlignJustify,
 } from "react-icons/fi";
@@ -17,7 +17,7 @@ function Navbar() {
   const [isOpen, setOpen] = useState(false);
   const toggleNav = () => setOpen((c) => !c);
   const { deleteSession, user } = useUserContext();
-  
+
   return (
     <>
       <FiAlignJustify className="nav-icon nav-bars" onClick={toggleNav} />
@@ -36,9 +36,21 @@ function Navbar() {
         )}
 
         <div className={css.socials}>
-          <SocialLink href="https://github.com/znareak" text={<FiGithub />} />
-          <SocialLink href="https://www.workana.com/freelancer/2e2ca9c851455cf42d2902131d07f967" text={<FiLinkedin />} />
-          <SocialLink href="https://www.linkedin.com/in/libardo-rengifo-561a04187/" text={<FiLinkedin />} />
+          <SocialLink
+            href="https://github.com/znareak"
+            text={<FiGithub />}
+            title="Mi perfil de github"
+          />
+          <SocialLink
+            href="https://www.workana.com/freelancer/2e2ca9c851455cf42d2902131d07f967"
+            text={<FiLink />}
+            title="Mi perfil de workana"
+          />
+          <SocialLink
+            href="https://www.linkedin.com/in/libardo-rengifo-561a04187/"
+            text={<FiLinkedin />}
+            title="Mi perfil de linkedin"
+          />
         </div>
       </nav>
     </>
