@@ -17,7 +17,7 @@ export default function Home() {
           Desarrollador web junior en
           <TextMagic text="ReactJS" />, <TextMagic text="NodeJS" /> y
           <TextMagic text="SASS" /> , en constante estudio y crecimiento
-          integral en el ámbito laboral. Dipuesto a trabajar en ambientes
+          integral en el ámbito laboral. Dispuesto a trabajar en ambientes
           grupales donde el trabajo en grupo y la comunicación es crucial.
         </p>
 

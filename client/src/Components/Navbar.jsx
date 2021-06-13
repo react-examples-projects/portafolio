@@ -2,7 +2,7 @@ import { memo, useState } from "react";
 import { NavLink } from "react-router-dom";
 import {
   FiGithub,
-  FiFacebook,
+  FiLinkedin,
   FiLinkedin,
   FiChevronsLeft,
   FiAlignJustify,
@@ -37,8 +37,8 @@ function Navbar() {
 
         <div className={css.socials}>
           <SocialLink href="https://github.com/znareak" text={<FiGithub />} />
-          <SocialLink href="https://facebook.com/" text={<FiFacebook />} />
-          <SocialLink href="https://ve.linkedin.com/" text={<FiLinkedin />} />
+          <SocialLink href="https://www.workana.com/freelancer/2e2ca9c851455cf42d2902131d07f967" text={<FiLinkedin />} />
+          <SocialLink href="https://www.linkedin.com/in/libardo-rengifo-561a04187/" text={<FiLinkedin />} />
         </div>
       </nav>
     </>
