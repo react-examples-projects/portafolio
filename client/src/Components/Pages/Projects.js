@@ -18,8 +18,8 @@ export default function Projects() {
       <Title title="Proyectos" />
       <h1 className="mt-5 mb-4 font-weight-bold">Proyectos</h1>
       <p>
-        Una recopilación de proyectos personales y grupales utilizando
-        tecnologías web, mayormente frameworks/librerías enfocadas a javascript:
+        Proyectos personales más destacados utilizando tecnologías web,
+        mayormente frameworks/librerías enfocadas a javascript.
       </p>
       {user._id && (
         <>
