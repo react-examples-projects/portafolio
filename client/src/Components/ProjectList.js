@@ -7,7 +7,7 @@ export default function ProjectList({ projects, isLoading, setProjects }) {
   if (isLoading) return <ProjectsLoader />;
 
   return (
-    <Row>
+    <Row role="list">
       {projects?.map((project) => {
         return (
           <Col

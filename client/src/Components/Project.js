@@ -28,10 +28,12 @@ export default function Project({
     <div
       className="bg-white shadow-sm h-100 w-100"
       style={{ borderRadius: "10px", maxHeight: "370px", overflowY: "auto" }}
+      role="listitem"
     >
       <img
         src={image || ImagePlaceholder}
-        alt="The project"
+        alt={title}
+        title={title}
         className="img-fluid w-100"
         style={{
           objectFit: "cover",

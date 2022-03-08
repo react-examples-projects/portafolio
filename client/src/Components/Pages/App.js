@@ -20,7 +20,7 @@ export default function Home() {
           <TextMagic text="SASS" /> , en constante estudio y crecimiento
           integral en el ámbito laboral. Dispuesto a trabajar en ambientes
           grupales donde el trabajo en grupo y la comunicación es crucial.
-          <a href={CV} target="_blank" className="d-block text-monospace mt-1">
+          <a href={CV} target="_blank" className="d-block text-monospace mt-1" rel="noreferrer">
             Ver curriculum
           </a>
         </p>
