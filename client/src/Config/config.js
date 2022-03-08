@@ -1,7 +1,7 @@
 import { getToken } from "../Helpers/token";
 
 //"https://portfolio-api-phi.vercel.app/api"
-const API_URL = process.env.REACT_APP_API_URL;
+const API_URL = "https://portfolio-api-phi.vercel.app/api";
 const LOGIN = `${API_URL}/login`;
 const USER_INFO = `${API_URL}/user?token=${getToken()}`;
 const PROJECTS = `${API_URL}/project`;
@@ -15,7 +15,7 @@ const WEB_TECHNOLOGIES = [
   "SASS",
   "ExpressJS",
   "MongoDB + Mongoose",
-  "PHP"
+  "PHP",
 ];
 
 // email config
