@@ -4,6 +4,12 @@
 
 .aboutContent {
   display: flex;
+
+  @media screen and (max-width: 720px){
+    flex-direction: column-reverse;
+    align-items: center;
+    text-align: center;
+  }
 }
 
 .aboutBio {
@@ -13,12 +19,21 @@
   h2 {
     font-weight: bolder;
   }
+
+  @media screen and (max-width: 720px){
+    margin-top: 2rem;
+  }
 }
 
 .aboutSocial {
   display: flex;
+  flex-wrap: wrap;
   gap: 8px;
   margin-top: 0.5rem;
+
+  @media screen and (max-width: 720px){
+    justify-content: center;
+  }
 }
 
 .profileImage>img {

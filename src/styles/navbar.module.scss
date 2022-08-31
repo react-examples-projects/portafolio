@@ -7,6 +7,10 @@
 .header {
   padding: 1.2rem 2rem;
   border-bottom: 1px solid #eee;
+
+  @media screen and (max-width: 520px) {
+    padding: 1.2rem 0.8rem;
+  }
 }
 
 .headerTitle {

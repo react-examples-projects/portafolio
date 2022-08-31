@@ -23,6 +23,10 @@
 
 body {
   cursor: none;
+
+  @media screen and (max-width: 720px) {
+    font-size: 15px !important;
+  }
 }
 
 code {
@@ -75,4 +79,17 @@ code {
   background: linear-gradient(to top, #02aab0, #00cdac);
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+
+@media screen and (max-width: 850px) {
+  .wrapper {
+    padding: 0 1rem;
+  }
+}
+
+
+@media screen and (max-width: 520px) {
+  .wrapper {
+    padding: 0;
+  }
 }
