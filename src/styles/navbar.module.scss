@@ -1,0 +1,26 @@
+@mixin dflex {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.header {
+  padding: 1.2rem 2rem;
+  border-bottom: 1px solid #eee;
+}
+
+.headerTitle {
+  font-size: 1.2rem;
+  margin-bottom: 0;
+}
+
+.headerWrapper {
+  @include dflex();
+  width: 100%;
+  max-width: 800px;
+  margin: auto;
+}
+
+.headerMenu {
+  @include dflex();
+}

@@ -1,0 +1,29 @@
+.aboutMe {
+  margin-top: 2rem;
+}
+
+.aboutContent {
+  display: flex;
+}
+
+.aboutBio {
+  width: 100%;
+  max-width: 450px;
+
+  h2 {
+    font-weight: bolder;
+  }
+}
+
+.aboutSocial {
+  display: flex;
+  gap: 8px;
+  margin-top: 0.5rem;
+}
+
+.profileImage>img {
+  border-radius: 50%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover !important;
+  object-position: center;
+}

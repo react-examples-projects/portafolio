@@ -1,0 +1,51 @@
+.projects {
+  margin-top: 3rem;
+}
+
+.project {
+  padding: 1rem;
+  border: 1px solid rgb(214, 214, 214);
+  border-radius: 8px;
+}
+
+.projectList {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  max-height: 500px;
+  overflow-y: auto;
+  padding-right: 1rem;
+  gap: 5px;
+}
+
+.project {
+  display: flex;
+  flex-direction: column;
+  flex: 0 0 calc(50% - 10px);
+  margin-bottom: 1rem;
+
+  h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0;
+  }
+
+  >p {
+    font-size: 14px;
+    margin-top: 0.5rem;
+  }
+}
+
+.technologies {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 5px;
+  margin-top: auto;
+
+  >span {
+    border-color: #a6a3a3 !important;
+  }
+}
+
+.link {
+  font-size: 12px !important;
+}
