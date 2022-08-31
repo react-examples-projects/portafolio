@@ -1,0 +1,13 @@
+.skillsList {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+
+  >span {
+    border-color: #a6a3a3 !important;
+  }
+}
+
+.skills {
+  margin: 3rem 0;
+}

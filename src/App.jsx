@@ -1,8 +1,9 @@
 import Navbar from "./components/Navbar";
 import AboutMe from "./components/AboutMe";
 import Projects from "./components/Projects";
-import initCursor from "./helpers/cursors";
 import Contact from "./components/Contact";
+import Skills from "./components/Skills";
+import initCursor from "./helpers/cursors";
 import { useEffect } from "react";
 
 function App() {
@@ -17,6 +18,7 @@ function App() {
       <div className="container">
         <AboutMe />
         <Projects />
+        <Skills />
         <Contact />
       </div>
     </div>

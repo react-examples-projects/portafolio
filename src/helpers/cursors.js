@@ -9,9 +9,11 @@ export default function initCursor() {
 
   window.document.addEventListener("mousemove", onEvent);
   window.document.addEventListener("mouseleave", onEvent);
-
+  window.document.addEventListener("scroll", onEvent);
+  
   return () => {
     window.document.removeEventListener("mousemove", onEvent);
     window.document.removeEventListener("mouseleave", onEvent);
+    window.document.removeEventListener("scroll", onEvent);
   };
 }
