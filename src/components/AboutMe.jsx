@@ -6,6 +6,7 @@ import {
   RiFileList2Line,
 } from "react-icons/ri";
 import Profile from "../resources/profile.webp";
+import CV from "../resources/cv.pdf";
 import styles from "../styles/aboutme.module.scss";
 
 export default function AboutMe() {
@@ -34,7 +35,7 @@ export default function AboutMe() {
       </div>
       <div className={styles.aboutSocial}>
         <Link
-          href="https://github.com/znareak"
+          href={CV}
           target="_blank"
           rel="noreferrer noopener"
         >

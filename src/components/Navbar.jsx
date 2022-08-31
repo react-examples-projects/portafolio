@@ -9,8 +9,20 @@ export default function Navbar() {
         <h1 className={styles.headerTitle}>Libardo</h1>
 
         <div className={styles.headerMenu}>
-          <Button type="abort" iconRight={<FiSun />} auto />
-          <Button type="abort" iconRight={<FiMenu />} auto />
+          <Button
+            type="abort"
+            iconRight={<FiSun />}
+            title="Cambiar a modo oscuro"
+            aria-label="Cambiar a modo oscuro"
+            auto
+          />
+          <Button
+            type="abort"
+            iconRight={<FiMenu />}
+            title="Abrir menú"
+            aria-label="Abrir menú"
+            auto
+          />
         </div>
       </div>
     </header>

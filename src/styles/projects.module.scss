@@ -12,9 +12,11 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  max-height: 500px;
+  max-height: 600px;
   overflow-y: auto;
   padding-right: 1rem;
+  margin-top: 2.5rem;
+  margin-bottom: 3rem;
   gap: 5px;
 }
 

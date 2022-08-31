@@ -25,6 +25,19 @@ body {
   cursor: none;
 }
 
+code {
+  border-radius: 5px;
+  border: 1px solid rgb(201, 201, 201);
+  padding: 0.6rem;
+  font-family: monospace;
+  color: #000 !important;
+
+  &::before,
+  &::after {
+    content: "" !important;
+  }
+}
+
 .container {
   width: 100%;
   max-width: calc(800px + 2rem);
@@ -34,15 +47,18 @@ body {
 }
 
 .cursor {
-  width: 40px;
-  height: 40px;
-  border: 3px solid rgb(0, 0, 0);
+  width: 20px;
+  height: 20px;
   border-radius: 50%;
   position: absolute;
-  box-shadow: 2px -3px 41px -1px rgba(250, 250, 250, 0.64);
+  ;
   transition: all 40ms linear;
   pointer-events: none;
-  mix-blend-mode: difference;
+
+  background: -o-linear-gradient(to top, #02aab0, #00cdac);
+  background: -moz-linear-gradient(to top, #02aab0, #00cdac);
+  background: -webkit-linear-gradient(to top, #02aab0, #00cdac);
+  background: linear-gradient(to top, #02aab0, #00cdac);
 }
 
 .opacity-gradient {
