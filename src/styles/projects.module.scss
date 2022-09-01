@@ -59,3 +59,14 @@
 .link {
   font-size: 12px !important;
 }
+
+body[class="dark"] {
+  .project {
+    border-color: #464646;
+  }
+
+  .technologies>span {
+    border-color: #464646 !important;
+    background-color: transparent;
+  }
+}

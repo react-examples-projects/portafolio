@@ -1,8 +1,12 @@
 import { Button } from "@geist-ui/core";
 import { FiMoon, FiSun, FiMenu } from "react-icons/fi";
 import styles from "../styles/navbar.module.scss";
+import useThemeContext from "../hooks/useThemeContext";
 
 export default function Navbar() {
+  const { currentTheme, toggle } = useThemeContext();
+  const isDark = currentTheme === "dark";
+
   return (
     <header className={styles.header}>
       <div className={styles.headerWrapper}>
@@ -11,9 +15,10 @@ export default function Navbar() {
         <div className={styles.headerMenu}>
           <Button
             type="abort"
-            iconRight={<FiSun />}
-            title="Cambiar a modo oscuro"
-            aria-label="Cambiar a modo oscuro"
+            iconRight={isDark ? <FiMoon /> : <FiSun />}
+            title={`Cambiar a modo ${isDark ? "claro" : "oscuro"}`}
+            aria-label={`Cambiar a modo ${isDark ? "claro" : "oscuro"}`}
+            onClick={toggle}
             auto
           />
           <Button

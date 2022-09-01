@@ -11,3 +11,10 @@
 .skills {
   margin: 3rem 0;
 }
+
+body[class="dark"] {
+  .skillsList>span {
+    border-color: #464646 !important;
+    background-color: transparent;
+  }
+}

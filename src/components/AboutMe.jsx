@@ -41,8 +41,7 @@ export default function AboutMe() {
         >
           <Button
             iconRight={<RiFileList2Line />}
-            type="success-light"
-            ghost
+            type="success"
             auto
           >
             Ver curriculum

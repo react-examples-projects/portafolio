@@ -24,6 +24,15 @@
 body {
   cursor: none;
 
+  &.dark {
+    background-color: #1a202c;
+    color: rgba(255, 255, 255, 0.863);
+
+    code {
+      color: rgba(255, 255, 255, 0.863) !important;
+    }
+  }
+
   @media screen and (max-width: 720px) {
     font-size: 15px !important;
   }
@@ -47,7 +56,7 @@ code {
   max-width: calc(800px + 2rem);
   padding: 0 1rem;
   margin: auto;
-  margin-bottom: 4rem;
+  padding-bottom: 4rem;
 }
 
 .cursor {
