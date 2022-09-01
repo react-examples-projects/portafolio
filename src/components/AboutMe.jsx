@@ -5,46 +5,35 @@ import {
   RiLink,
   RiFileList2Line,
 } from "react-icons/ri";
+import { useTranslation } from "react-i18next";
 import Profile from "../resources/profile.webp";
 import CV from "../resources/cv.pdf";
 import styles from "../styles/aboutme.module.scss";
 
 export default function AboutMe() {
+  const { t } = useTranslation(["aboutme"]);
+
   return (
     <section className={styles.aboutMe}>
       <div className={styles.aboutContent}>
         <div className={styles.aboutBio}>
-          <h2 className="text-gradient">Hola, que tal!</h2>
-          <p>
-            Desarrollador web junior en <strong>ReactJS</strong>,
-            <strong>NodeJS</strong> y <strong>SASS</strong> en constante estudio
-            y crecimiento integral en el ámbito laboral. Dispuesto a trabajar en
-            ambientes grupales donde el trabajo en grupo y la comunicación es
-            crucial.
-          </p>
+          <h2 className="text-gradient">{t("greeting")}</h2>
+          <p>{t("bio")}</p>
         </div>
 
         <Image
           width="180px"
           height="180px"
-          alt="Mi foto de perfil"
-          title="Mi foto de perfil"
+          alt={t("profile")}
+          title={t("profile")}
           className={styles.profileImage}
           src={Profile}
         />
       </div>
       <div className={styles.aboutSocial}>
-        <Link
-          href={CV}
-          target="_blank"
-          rel="noreferrer noopener"
-        >
-          <Button
-            iconRight={<RiFileList2Line />}
-            type="success"
-            auto
-          >
-            Ver curriculum
+        <Link href={CV} target="_blank" rel="noreferrer noopener">
+          <Button iconRight={<RiFileList2Line />} type="success" auto>
+            {t("cv")}
           </Button>
         </Link>
         <Link

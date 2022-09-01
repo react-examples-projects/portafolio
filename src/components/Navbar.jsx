@@ -1,11 +1,20 @@
 import { Button } from "@geist-ui/core";
-import { FiMoon, FiSun, FiMenu } from "react-icons/fi";
+import { FiMoon, FiSun } from "react-icons/fi";
+import { useTranslation } from "react-i18next";
 import styles from "../styles/navbar.module.scss";
 import useThemeContext from "../hooks/useThemeContext";
 
 export default function Navbar() {
   const { currentTheme, toggle } = useThemeContext();
+  const { i18n } = useTranslation();
   const isDark = currentTheme === "dark";
+  const toggleLanguage = () => {
+    if (i18n.language === "es") {
+      i18n.changeLanguage("en");
+    } else {
+      i18n.changeLanguage("es");
+    }
+  };
 
   return (
     <header className={styles.header}>
@@ -23,11 +32,13 @@ export default function Navbar() {
           />
           <Button
             type="abort"
-            iconRight={<FiMenu />}
             title="Abrir menú"
             aria-label="Abrir menú"
+            onClick={toggleLanguage}
             auto
-          />
+          >
+            {i18n.language.toUpperCase()}
+          </Button>
         </div>
       </div>
     </header>
