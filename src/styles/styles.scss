@@ -22,8 +22,6 @@
 }
 
 body {
-  cursor: none;
-
   &.dark {
     background-color: #1a202c;
     color: rgba(255, 255, 255, 0.863);
@@ -59,25 +57,33 @@ code {
   padding-bottom: 4rem;
 }
 
-.cursor {
-  width: 20px;
-  height: 20px;
-  border-radius: 50%;
-  position: absolute;
-  ;
-  transition: all 40ms linear;
-  pointer-events: none;
-
-  background: -o-linear-gradient(to top, #02aab0, #00cdac);
-  background: -moz-linear-gradient(to top, #02aab0, #00cdac);
-  background: -webkit-linear-gradient(to top, #02aab0, #00cdac);
-  background: linear-gradient(to top, #02aab0, #00cdac);
+.fadeIn {
+  -webkit-animation-name: fadeIn;
+  animation-name: fadeIn;
+  -webkit-animation-duration: 1s;
+  animation-duration: 1s;
+  -webkit-animation-fill-mode: both;
+  animation-fill-mode: both;
 }
 
-.opacity-gradient {
-  mask-image: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0.3)));
-  mask-image: -moz-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0.3)));
-  mask-image: -o-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 1)), to(rgba(0, 0, 0, 0.3)));
+@-webkit-keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+
+  100% {
+    opacity: 1;
+  }
 }
 
 .text-gradient {

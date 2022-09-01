@@ -6,8 +6,17 @@ import useThemeContext from "../hooks/useThemeContext";
 
 export default function Navbar() {
   const { currentTheme, toggle } = useThemeContext();
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation(["navbar"]);
   const isDark = currentTheme === "dark";
+  const lang = i18n.language === "es" ? "english" : "spanish"
+  const themeLang = isDark
+    ? i18n.language === "es"
+      ? "claro"
+      : "light"
+    : i18n.language === "es"
+    ? "oscuro"
+    : "dark";
+
   const toggleLanguage = () => {
     if (i18n.language === "es") {
       i18n.changeLanguage("en");
@@ -25,15 +34,15 @@ export default function Navbar() {
           <Button
             type="abort"
             iconRight={isDark ? <FiMoon /> : <FiSun />}
-            title={`Cambiar a modo ${isDark ? "claro" : "oscuro"}`}
-            aria-label={`Cambiar a modo ${isDark ? "claro" : "oscuro"}`}
+            title={t("btnThemeTitle", { theme: themeLang })}
+            aria-label={t("btnThemeTitle", { theme: themeLang })}
             onClick={toggle}
             auto
           />
           <Button
             type="abort"
-            title="Abrir menú"
-            aria-label="Abrir menú"
+            title={t("btnLanguageTitle", { lang})}
+            aria-label={t("btnLanguageTitle", { lang})}
             onClick={toggleLanguage}
             auto
           >
