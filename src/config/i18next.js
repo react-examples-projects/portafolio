@@ -9,7 +9,7 @@ i18next
   .use(initReactI18next)
   .use(ChainedBackend)
   .use(LanguageDetector)
-
+ 
   .init({
     backend: {
       backends: [LocalStorageBackend, HttpBackend],
