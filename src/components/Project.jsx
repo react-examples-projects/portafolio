@@ -24,17 +24,24 @@ export default function Project({
         ))}
       </div>
 
-      {github && (
-        <Link
-          href={github}
-          target="_blank"
-          rel="noreferrer noopener"
-          style={{ marginTop: "0.5rem" }}
-          color
-        >
-          <small>Github</small>
-        </Link>
-      )}
+      <div style={{ marginTop: "0.5rem" }}>
+        {github && (
+          <Link href={github} target="_blank" rel="noreferrer noopener" color>
+            <small>Github</small>
+          </Link>
+        )}
+        {link && (
+          <Link
+            href={link}
+            target="_blank"
+            rel="noreferrer noopener"
+            style={{ marginLeft: github ? "1rem" : "0" }}
+            color
+          >
+            <small>Ver en linea</small>
+          </Link>
+        )}
+      </div>
     </article>
   );
 }

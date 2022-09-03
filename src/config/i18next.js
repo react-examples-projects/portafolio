@@ -6,11 +6,14 @@ import LocalStorageBackend from "i18next-localstorage-backend";
 import { initReactI18next } from "react-i18next";
 
 i18next
+  .use(LanguageDetector)
   .use(initReactI18next)
   .use(ChainedBackend)
-  .use(LanguageDetector)
- 
   .init({
+    detection: {
+      order: ["localStorage", "sessionStorage", "cookie"],
+      lookupQuerystring: "lng",
+    },
     backend: {
       backends: [LocalStorageBackend, HttpBackend],
       backendOptions: [

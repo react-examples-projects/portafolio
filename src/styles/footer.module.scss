@@ -1,0 +1,21 @@
+@mixin dcenter {
+  display: flex;
+  align-items: center !important;
+}
+
+.footer {
+  @include dcenter();
+  color: rgb(158, 158, 158) !important;
+  justify-content: center;
+  margin-top: 3rem;
+}
+
+.copyright {
+  @include dcenter();
+}
+
+.icon {
+  display: block;
+  margin-left: 5px;
+  margin-right: 5px;
+}

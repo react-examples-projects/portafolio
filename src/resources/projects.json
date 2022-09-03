@@ -5,7 +5,8 @@
     "title": "Ricky and Morty App",
     "description": "Lista de todos los personajes de la serie ricky and morty con paginación y filtrado",
     "github": "https://github.com/react-examples-projects/esbuild-react-app",
-    "link": "https://serene-tartufo-b6d3c6.netlify.app/"
+    "link": "https://serene-tartufo-b6d3c6.netlify.app/",
+    "rank": 0
   },
   {
     "_id": "62ae2b902fb4db0009bafc1e",
@@ -13,7 +14,8 @@
     "title": "Landing Page",
     "description": "Página de inicio con varias secciones génericas con animaciones sencillas",
     "github": "https://github.com/znareak/webpractices/tree/master/landinge%20page",
-    "link": "https://resilient-squirrel-b9e58b.netlify.app/"
+    "link": "https://resilient-squirrel-b9e58b.netlify.app/",
+    "rank": 0
   },
   {
     "_id": "62ae28441c098600092d3769",
@@ -21,7 +23,8 @@
     "title": "Tablero Canvas",
     "description": "Estructura y diseño de un tablero canvas para la gestión de tareas",
     "github": "https://github.com/react-examples-projects/react-dashboard",
-    "link": "https://wizardly-beaver-cfc907.netlify.app/"
+    "link": "https://wizardly-beaver-cfc907.netlify.app/",
+    "rank": 0
   },
   {
     "_id": "62ae26b13ca6460009892059",
@@ -29,7 +32,8 @@
     "title": "Página de Registro",
     "description": "Estructura y diseño de un registro de usuario con validación de campos.",
     "github": "https://github.com/react-examples-projects/google-meet-clone/blob/dev/src/pages/App.js",
-    "link": "https://effortless-sopapillas-50dac6.netlify.app/"
+    "link": "https://effortless-sopapillas-50dac6.netlify.app/",
+    "rank": 1
   },
   {
     "_id": "62996c60c53ecf00095aeb6c",
@@ -37,7 +41,8 @@
     "title": "Clima App",
     "description": "Obten un resumen con gráficas sobre tu clima actual y de otras ciudades así como los pronósticos.",
     "github": "https://github.com/react-examples-projects/weather-app",
-    "link": "https://weather-app-eta-pied.vercel.app/"
+    "link": "https://weather-app-eta-pied.vercel.app/",
+    "rank": 2
   },
   {
     "_id": "627ef98f5cf661000936ee2f",
@@ -45,7 +50,8 @@
     "title": "Google Meet Clone",
     "description": "Aplicación de videollamadas desarrollada con Twilio y React con ExpresJS",
     "github": "https://github.com/react-examples-projects/google-meet-clone",
-    "link": "https://google-meet-delta.vercel.app/"
+    "link": "https://google-meet-delta.vercel.app/",
+    "rank": 2
   },
   {
     "_id": "62252d433750da0009cc14f5",
@@ -53,7 +59,8 @@
     "title": "TodoApp",
     "description": "Desarrollado en vanilla javascript, un proyecto básico sobre un todo app para gestionar tus tareas.",
     "github": "https://github.com/node-projects-znareak/mongoose_study/tree/main/views",
-    "link": "https://node-projects-znareak.github.io/mongoose_study/views/"
+    "link": "https://node-projects-znareak.github.io/mongoose_study/views/",
+    "rank": 0
   },
   {
     "_id": "619a6b993d15af00086dc211",
@@ -67,7 +74,8 @@
     "title": "Pomodoro App",
     "description": "Aplicación básica que permite administrar notas y las tareas con la técnica pomodoro.",
     "github": "",
-    "link": "https://pomodoro-three-theta.vercel.app/"
+    "link": "https://pomodoro-three-theta.vercel.app/",
+    "rank": 2
   },
   {
     "_id": "6137b09f19590400082ad99e",
@@ -82,7 +90,8 @@
     "title": "MERN Template",
     "description": "Una plantilla para iniciar un proyecto MERN, contiene todas las configuraciones básicas del servidor y del cliente.",
     "github": "https://github.com/node-projects-znareak/mern-template",
-    "link": "https://mern-template-ruddy.vercel.app/"
+    "link": "https://mern-template-ruddy.vercel.app/",
+    "rank": 2
   },
   {
     "_id": "612faa484a58320008412869",
@@ -90,7 +99,8 @@
     "title": "React Layout Template",
     "description": "Un layout de 2 columnas con styled-components, rápido y con archivos de configuración.",
     "github": "https://github.com/react-examples-projects/react-layout-template",
-    "link": "https://blissful-shannon-db977c.netlify.app/"
+    "link": "https://blissful-shannon-db977c.netlify.app/",
+    "rank": 1
   },
   {
     "_id": "610fff026f95ba0008ca2aaf",
@@ -105,7 +115,8 @@
     "title": "Manjuro",
     "description": "Un sistema para subir imágenes, comentar y márcalas en favoritos.\r\nPosee sistema de rol y perfiles.",
     "github": "",
-    "link": "https://majuro.vercel.app/"
+    "link": "https://majuro.vercel.app/",
+    "rank": 2
   },
   {
     "_id": "60d76dd2a0afa80008da7ea6",
@@ -113,7 +124,8 @@
     "title": "Colección de Landing Pages",
     "description": "Colección de proyectos básicos, páginas de inicio y otras aplicaciones de ocio.",
     "github": "https://github.com/react-testing/react-landing-pages",
-    "link": "https://nostalgic-pasteur-bc32a1.netlify.app/"
+    "link": "https://nostalgic-pasteur-bc32a1.netlify.app/",
+    "rank": 1
   },
   {
     "_id": "60ac059525df3b000522283e",
@@ -121,7 +133,8 @@
     "title": "Sistema de vacunas",
     "description": "Un completo sistema que administra vacunas, información de las personas, administradores y esquemas. Posee otros módulos comunicativos como son foros y noticias, posee registro e inicio de sesión entra otras cosas.",
     "github": "",
-    "link": "http://vacunasmorichal.atwebpages.com/"
+    "link": "http://vacunasmorichal.atwebpages.com/",
+    "rank": 2
   },
   {
     "_id": "60abd43933f41700085bd41b",
@@ -135,6 +148,7 @@
     "title": "Página de películas",
     "description": "Permite listar las películas de proveniente de una API pública, posee registro, inicio sesión y guardar películas como favoritos.",
     "github": "https://github.com/Titan-hand/react-movies-page",
-    "link": "https://react-movies-page.vercel.app/"
+    "link": "https://react-movies-page.vercel.app/",
+    "rank": 2
   }
 ]

@@ -41,7 +41,7 @@ export default function AboutMe() {
           target="_blank"
           rel="noreferrer noopener"
         >
-          <Button iconRight={<RiGithubLine />} auto>
+          <Button type="secondary" ghost iconRight={<RiGithubLine />} auto>
             Github
           </Button>
         </Link>
@@ -51,8 +51,8 @@ export default function AboutMe() {
           target="_blank"
           rel="noreferrer noopener"
         >
-          <Button iconRight={<RiLinkedinFill />} auto>
-            Likedin
+          <Button type="secondary" ghost iconRight={<RiLinkedinFill />} auto>
+            Linkedin
           </Button>
         </Link>
 
@@ -61,7 +61,7 @@ export default function AboutMe() {
           target="_blank"
           rel="noreferrer noopener"
         >
-          <Button iconRight={<RiLink />} auto>
+          <Button type="secondary" ghost iconRight={<RiLink />} auto>
             Arc dev
           </Button>
         </Link>
