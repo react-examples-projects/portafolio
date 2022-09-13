@@ -3,10 +3,17 @@ import useProjects from "../hooks/useProjects";
 import Project from "./Project";
 import { Select } from "@geist-ui/core";
 import { useTranslation } from "react-i18next";
+import { useEffect } from "react";
 
 export default function Projects() {
   const { t } = useTranslation(["projects"]);
   const { projects, filter, onFilter } = useProjects();
+
+  useEffect(() => {
+    const parent = document.getElementById("filter");
+    const select = parent.querySelector("input[type='search']");
+    select.setAttribute("aria-label", t("filter"));
+  }, [t]);
 
   return (
     <section className={styles.projects}>
@@ -26,6 +33,7 @@ export default function Projects() {
             value={filter}
             id="filter"
             onChange={onFilter}
+            aria-label={t("filter")}
           >
             <Select.Option value="all">{t("alls")}</Select.Option>
             <Select.Option value="importants">{t("importants")}</Select.Option>
