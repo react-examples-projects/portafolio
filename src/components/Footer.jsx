@@ -1,6 +1,6 @@
 import { DiGithubBadge } from "react-icons/di";
 import { Link } from "@geist-ui/core";
-import Heart from "../resources/heart.png";
+import { FcLike } from "react-icons/fc";
 import styles from "../styles/footer.module.scss";
 
 export default function Footer() {
@@ -8,13 +8,7 @@ export default function Footer() {
     <footer className={styles.footer}>
       <small className={styles.copyright}>
         Hecho con
-        <img
-          src={Heart}
-          alt="Hecho con amor"
-          className={styles.icon}
-          width={15}
-          height={15}
-        />
+        <FcLike style={{ margin: "0 5px" }} />
         por
         <Link
           href="https://github.com/znareak"

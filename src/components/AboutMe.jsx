@@ -30,6 +30,7 @@ export default function AboutMe() {
           src={Profile}
         />
       </div>
+
       <div className={styles.aboutSocial}>
         <Link href={CV} target="_blank" rel="noreferrer noopener">
           <Button iconRight={<RiFileList2Line />} type="success" auto>
@@ -41,7 +42,13 @@ export default function AboutMe() {
           target="_blank"
           rel="noreferrer noopener"
         >
-          <Button type="secondary" ghost iconRight={<RiGithubLine />} auto>
+          <Button
+            type="secondary"
+            ghost
+            iconRight={<RiGithubLine />}
+            className={styles.button}
+            auto
+          >
             Github
           </Button>
         </Link>
@@ -51,7 +58,13 @@ export default function AboutMe() {
           target="_blank"
           rel="noreferrer noopener"
         >
-          <Button type="secondary" ghost iconRight={<RiLinkedinFill />} auto>
+          <Button
+            type="secondary"
+            ghost
+            iconRight={<RiLinkedinFill />}
+            className={styles.button}
+            auto
+          >
             Linkedin
           </Button>
         </Link>
@@ -61,7 +74,13 @@ export default function AboutMe() {
           target="_blank"
           rel="noreferrer noopener"
         >
-          <Button type="secondary" ghost iconRight={<RiLink />} auto>
+          <Button
+            type="secondary"
+            ghost
+            iconRight={<RiLink />}
+            className={styles.button}
+            auto
+          >
             Arc dev
           </Button>
         </Link>

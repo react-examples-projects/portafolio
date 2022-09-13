@@ -5,7 +5,7 @@
 .aboutContent {
   display: flex;
 
-  @media screen and (max-width: 720px){
+  @media screen and (max-width: 720px) {
     flex-direction: column-reverse;
     align-items: center;
     text-align: center;
@@ -20,7 +20,7 @@
     font-weight: bolder;
   }
 
-  @media screen and (max-width: 720px){
+  @media screen and (max-width: 720px) {
     margin-top: 2rem;
   }
 }
@@ -31,7 +31,9 @@
   gap: 8px;
   margin-top: 0.5rem;
 
-  @media screen and (max-width: 720px){
+
+
+  @media screen and (max-width: 720px) {
     justify-content: center;
   }
 }
@@ -41,4 +43,12 @@
   aspect-ratio: 16 / 9;
   object-fit: cover !important;
   object-position: center;
+}
+
+
+body[class="dark"] {
+  .aboutSocial button.button:not(:hover) {
+    background-color: rgba(0, 0, 0, 0.219);
+    border-color: #464646;
+  }
 }

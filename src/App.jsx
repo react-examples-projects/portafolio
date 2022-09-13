@@ -9,13 +9,13 @@ function App() {
   return (
     <div className="wrapper fadeIn">
       <Navbar />
-      <div className="container">
+      <main className="container">
         <AboutMe />
         <Projects />
         <Skills />
         <Contact />
         <Footer />
-      </div>
+      </main>
     </div>
   );
 }

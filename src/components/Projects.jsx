@@ -22,15 +22,15 @@ export default function Projects() {
           </label>
 
           <Select
-            placeholder="Filtrar proyectos"
+            placeholder={t("filter")}
             value={filter}
             id="filter"
             onChange={onFilter}
           >
-            <Select.Option value="all">Todos</Select.Option>
-            <Select.Option value="importants">Importantes</Select.Option>
-            <Select.Option value="casuals">Casuales</Select.Option>
-            <Select.Option value="practice">Prácticas</Select.Option>
+            <Select.Option value="all">{t("alls")}</Select.Option>
+            <Select.Option value="importants">{t("importants")}</Select.Option>
+            <Select.Option value="casuals">{t("casuals")}</Select.Option>
+            <Select.Option value="practice">{t("practices")}</Select.Option>
           </Select>
         </div>
       </div>

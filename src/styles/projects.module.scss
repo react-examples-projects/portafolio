@@ -60,8 +60,8 @@
 .project {
   display: flex;
   flex-direction: column;
-  flex: 0 0 calc(50% - 10px);
-  margin-bottom: 1rem;
+  flex: 0 0 calc(50% - 5px);
+  margin-bottom: 0.5rem;
 
   h3 {
     font-size: 1.2rem;
@@ -96,6 +96,7 @@
 body[class="dark"] {
   .project {
     border-color: #464646;
+    background-color: rgba(0, 0, 0, 0.137);
   }
 
   .technologies>span {
