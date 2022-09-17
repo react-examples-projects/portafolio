@@ -31,18 +31,23 @@
   gap: 8px;
   margin-top: 0.5rem;
 
-
-
   @media screen and (max-width: 720px) {
     justify-content: center;
   }
 }
 
-.profileImage>img {
-  border-radius: 50%;
-  aspect-ratio: 16 / 9;
-  object-fit: cover !important;
-  object-position: center;
+.profileImage{
+  margin: 0 0 0 auto !important ;
+  >img {
+    border-radius: 50%;
+    aspect-ratio: 16 / 9;
+    object-fit: cover !important;
+    object-position: center;
+  }
+
+  @media screen and (max-width: 720px) {
+    margin: 0 auto !important ;
+  }
 }
 
 

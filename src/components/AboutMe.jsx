@@ -22,8 +22,8 @@ export default function AboutMe() {
         </div>
 
         <Image
-          width="180px"
-          height="180px"
+          width="200px"
+          height="200px"
           alt={t("profile")}
           title={t("profile")}
           className={styles.profileImage}

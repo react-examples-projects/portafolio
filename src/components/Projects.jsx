@@ -34,6 +34,7 @@ export default function Projects() {
             id="filter"
             onChange={onFilter}
             aria-label={t("filter")}
+            className={styles.filterContainer}
           >
             <Select.Option value="all">{t("alls")}</Select.Option>
             <Select.Option value="importants">{t("importants")}</Select.Option>
