@@ -1,0 +1,34 @@
+$scroll-thumb-color : rgba(136, 136, 136, 0.575);
+$scroll-track-color : transparent;
+
+$black-color: #000;
+$gray-color: #464646;
+
+// dark mode variables
+$dark-background-color : #1a202c;
+$dark-text-color : rgba(255, 255, 255, 0.863);
+
+@mixin gradient() {
+  background: -o-linear-gradient(to top, #02aab0, #00cdac);
+  background: -moz-linear-gradient(to top, #02aab0, #00cdac);
+  background: -webkit-linear-gradient(to top, #02aab0, #00cdac);
+  background: linear-gradient(to top, #02aab0, #00cdac);
+}
+
+@mixin dark-mode {
+  body[class="dark"] {
+    @content;
+  }
+}
+
+@mixin querie-md {
+  @media screen and (max-width: 720px) {
+    @content;
+  }
+}
+
+@mixin querie-sm {
+  @media screen and (max-width: 520px) {
+    @content;
+  }
+}

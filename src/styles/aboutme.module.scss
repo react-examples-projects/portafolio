@@ -1,3 +1,5 @@
+@import "./variables/vars";
+
 .aboutMe {
   margin-top: 2rem;
 }
@@ -5,7 +7,7 @@
 .aboutContent {
   display: flex;
 
-  @media screen and (max-width: 720px) {
+  @include querie-md() {
     flex-direction: column-reverse;
     align-items: center;
     text-align: center;
@@ -20,7 +22,7 @@
     font-weight: bolder;
   }
 
-  @media screen and (max-width: 720px) {
+  @include querie-md() {
     margin-top: 2rem;
   }
 }
@@ -31,13 +33,14 @@
   gap: 8px;
   margin-top: 0.5rem;
 
-  @media screen and (max-width: 720px) {
+  @include querie-md() {
     justify-content: center;
   }
 }
 
-.profileImage{
-  margin: 0 0 0 auto !important ;
+.profileImage {
+  margin: 0 0 0 auto !important;
+
   >img {
     border-radius: 50%;
     aspect-ratio: 16 / 9;
@@ -45,15 +48,14 @@
     object-position: center;
   }
 
-  @media screen and (max-width: 720px) {
-    margin: 0 auto !important ;
+  @include querie-md() {
+    margin: 0 auto !important;
   }
 }
 
-
-body[class="dark"] {
+@include dark-mode() {
   .aboutSocial button.button:not(:hover) {
     background-color: rgba(0, 0, 0, 0.219);
-    border-color: #464646;
+    border-color: $gray-color;
   }
 }

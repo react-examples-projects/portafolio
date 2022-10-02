@@ -1,14 +1,16 @@
+@import "./variables/vars";
+
 ::-webkit-scrollbar {
   width: 6px;
 }
 
 ::-webkit-scrollbar-track {
-  background: transparent;
+  background: $scroll-track-color;
 }
 
 ::-webkit-scrollbar-thumb {
   border-radius: 4px;
-  background: rgba(136, 136, 136, 0.575);
+  background: $scroll-thumb-color;
 }
 
 * {
@@ -22,27 +24,12 @@
   user-select: none;
 }
 
-body {
-  &.dark {
-    background-color: #1a202c;
-    color: rgba(255, 255, 255, 0.863);
-
-    code {
-      color: rgba(255, 255, 255, 0.863) !important;
-    }
-  }
-
-  @media screen and (max-width: 720px) {
-    font-size: 15px !important;
-  }
-}
-
 code {
   border-radius: 5px;
-  border: 1px solid #464646;
+  border: 1px solid $gray-color;
   padding: 0.6rem;
   font-family: monospace;
-  color: #000 !important;
+  color: $black-color  !important;
 
   &::before,
   &::after {
@@ -89,10 +76,7 @@ code {
 
 .text-gradient {
   font-weight: bolder;
-  background: -o-linear-gradient(to top, #02aab0, #00cdac);
-  background: -moz-linear-gradient(to top, #02aab0, #00cdac);
-  background: -webkit-linear-gradient(to top, #02aab0, #00cdac);
-  background: linear-gradient(to top, #02aab0, #00cdac);
+  @include gradient();
   background-clip: text;
   -webkit-text-fill-color: transparent;
 }
@@ -103,8 +87,22 @@ code {
   }
 }
 
+@include dark-mode() {
+  background-color: $dark-background-color;
+  color: $dark-text-color;
 
-@media screen and (max-width: 520px) {
+  code {
+    color: $dark-text-color  !important;
+  }
+}
+
+@include querie-md () {
+  body {
+    font-size: 15px !important;
+  }
+}
+
+@include querie-sm () {
   .wrapper {
     padding: 0;
   }

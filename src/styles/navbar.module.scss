@@ -1,3 +1,5 @@
+@import "./variables/vars";
+
 @mixin dflex {
   display: flex;
   align-items: center;
@@ -31,6 +33,6 @@
 
 body[class="dark"] {
   .header {
-    border-bottom-color: #464646;
+    border-bottom-color: $gray-color;
   }
 }

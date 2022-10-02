@@ -33,7 +33,7 @@ export default function AboutMe() {
 
       <div className={styles.aboutSocial}>
         <Link href={CV} target="_blank" rel="noreferrer noopener">
-          <Button iconRight={<RiFileList2Line />} type="success" auto>
+          <Button iconRight={<RiFileList2Line />} type="success-light" auto>
             {t("cv")}
           </Button>
         </Link>
