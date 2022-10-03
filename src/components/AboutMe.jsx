@@ -6,6 +6,7 @@ import {
   RiFileList2Line,
 } from "react-icons/ri";
 import { useTranslation } from "react-i18next";
+import Atropos from "./Atropos";
 import Profile from "../resources/profile.webp";
 import CV from "../resources/cv.pdf";
 import styles from "../styles/aboutme.module.scss";
@@ -20,15 +21,16 @@ export default function AboutMe() {
           <h2 className="text-gradient">{t("greeting")}</h2>
           <p>{t("bio")}</p>
         </div>
-
-        <Image
-          width="200px"
-          height="200px"
-          alt={t("profile")}
-          title={t("profile")}
-          className={styles.profileImage}
-          src={Profile}
-        />
+        <Atropos style={{ marginLeft: "auto" }}>
+          <Image
+            width="200px"
+            height="200px"
+            alt={t("profile")}
+            title={t("profile")}
+            className={styles.profileImage}
+            src={Profile}
+          />
+        </Atropos>
       </div>
 
       <div className={styles.aboutSocial}>

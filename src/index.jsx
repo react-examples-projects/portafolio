@@ -9,6 +9,7 @@ import { GeistProvider, CssBaseline } from "@geist-ui/core";
 import "./config/i18next";
 import "inter-ui/inter.css";
 import "./styles/normalize.min.scss";
+import 'atropos/css'
 import "./styles/styles.scss";
 
 const root = ReactDOM.createRoot(document.getElementById("root"));

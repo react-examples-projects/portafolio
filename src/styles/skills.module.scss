@@ -6,7 +6,7 @@
   gap: 8px;
 
   >span {
-    border-color: #a6a3a3 !important;
+    border-color: $light-gray  !important;
     cursor: default;
     padding: 1.3rem 1rem !important;
   }
@@ -16,9 +16,8 @@
   margin: 3rem 0;
 }
 
-body[class="dark"] {
+@include dark-mode {
   .skillsList>span {
-    background-color: rgba(0, 0, 0, 0.219) !important ;
-    border-color: $gray-color !important;
+    @include setBackgroundBorder($gray-color, $dark-skills-color);
   }
 }

@@ -5,20 +5,15 @@
 }
 
 .subtitle {
-  margin-bottom: 0;
-  margin-top: 0;
+  margin: 0;
 }
 
 .content {
   display: flex;
 
-  @media screen and (max-width:520px) {
+  @include querie-sm() {
     flex-direction: column;
   }
-}
-
-.filterContainer {
-  background-color: rgba(0, 0, 0, 0.219) !important;
 }
 
 .label {
@@ -30,11 +25,10 @@
   width: max-content;
   display: flex;
   flex-direction: column;
-
   justify-content: center;
   margin-left: auto;
 
-  @media screen and (max-width:520px) {
+  @include querie-sm() {
     margin-left: unset;
     margin-top: 1.2rem;
     width: 100%;
@@ -46,11 +40,10 @@
   flex-wrap: wrap;
   justify-content: space-between;
   padding-right: 1rem;
-  margin-top: 2rem;
-  margin-bottom: 3rem;
+  margin: 2rem 0 3rem 0;
   gap: 5px;
 
-  @media screen and (max-width:520px) {
+  @include querie-sm() {
     padding-right: 0;
   }
 }
@@ -61,7 +54,7 @@
   flex: 0 0 calc(50% - 5px);
   margin-bottom: 0.5rem;
   padding: 1rem;
-  border: 1px solid rgb(214, 214, 214);
+  border: 1px solid $project-list-border-color;
   border-radius: 8px;
 
   h3 {
@@ -74,7 +67,7 @@
     margin-top: 0.5rem;
   }
 
-  @media screen and (max-width: 720px) {
+  @include querie-md() {
     flex: 0 0 calc(100% - 10px);
   }
 }
@@ -86,7 +79,7 @@
   margin-top: auto;
 
   >span {
-    border-color: #a6a3a3 !important;
+    border-color: $light-gray  !important;
   }
 }
 
@@ -94,14 +87,16 @@
   font-size: 12px !important;
 }
 
-body[class="dark"] {
+@include dark-mode {
   .project {
-    border-color: $gray-color;
-    background-color: rgba(0, 0, 0, 0.137);
+    @include setBackgroundBorder($gray-color, $dark-project-background );
   }
 
   .technologies>span {
-    border-color: $gray-color !important;
-    background-color: transparent;
+    @include setBackgroundBorder($gray-color, transparent);
+  }
+
+  .filterContainer {
+    background-color: $dark-filter-projects-background  !important;
   }
 }

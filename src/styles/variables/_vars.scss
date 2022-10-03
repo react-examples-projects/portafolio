@@ -2,17 +2,46 @@ $scroll-thumb-color : rgba(136, 136, 136, 0.575);
 $scroll-track-color : transparent;
 
 $black-color: #000;
+$light-black: rgba(0, 0, 0, 0.219);
+$white-color: #fff;
 $gray-color: #464646;
+$light-color: #eee;
+$light-gray: #a6a3a3;
+$footer-text-color : rgb(158, 158, 158);
+$page-spinner-color: rgba(51, 50, 50, 0.349);
+$project-list-border-color : rgb(214, 214, 214);
+
 
 // dark mode variables
 $dark-background-color : #1a202c;
 $dark-text-color : rgba(255, 255, 255, 0.863);
+$dark-button-social-color: $light-black;
+$dark-page-loader-background: #1a202c;
+$dark-page-spinner-color: rgb(255, 255, 255, .2);
+$dark-project-background: rgba(0, 0, 0, 0.137);
+$dark-filter-projects-background: $light-black;
+$dark-skills-color: $light-black;
 
 @mixin gradient() {
   background: -o-linear-gradient(to top, #02aab0, #00cdac);
   background: -moz-linear-gradient(to top, #02aab0, #00cdac);
   background: -webkit-linear-gradient(to top, #02aab0, #00cdac);
   background: linear-gradient(to top, #02aab0, #00cdac);
+}
+
+@mixin h-center() {
+  display: flex;
+  align-items: center !important;
+}
+
+@mixin between {
+  @include h-center();
+  justify-content: space-between;
+}
+
+@mixin setBackgroundBorder($border-color, $bg-color) {
+  border-color: $border-color  !important;
+  background-color: $bg-color;
 }
 
 @mixin dark-mode {

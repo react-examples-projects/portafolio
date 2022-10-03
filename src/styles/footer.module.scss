@@ -1,17 +1,14 @@
-@mixin dcenter {
-  display: flex;
-  align-items: center !important;
+@import "./variables/vars";
+
+.footer,
+.copyright {
+  @include h-center();
 }
 
 .footer {
-  @include dcenter();
-  color: rgb(158, 158, 158) !important;
+  color: $footer-text-color  !important;
   justify-content: center;
   margin-top: 3rem;
-}
-
-.copyright {
-  @include dcenter();
 }
 
 .icon {

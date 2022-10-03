@@ -1,16 +1,10 @@
 @import "./variables/vars";
 
-@mixin dflex {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 .header {
   padding: 1.2rem 2rem;
-  border-bottom: 1px solid #eee;
+  border-bottom: 1px solid $light-color;
 
-  @media screen and (max-width: 520px) {
+  @include querie-sm () {
     padding: 1.2rem 0.8rem;
   }
 }
@@ -20,18 +14,18 @@
   margin-bottom: 0;
 }
 
+.headerWrapper,
+.headerMenu {
+  @include between();
+}
+
 .headerWrapper {
-  @include dflex();
   width: 100%;
   max-width: 800px;
   margin: auto;
 }
 
-.headerMenu {
-  @include dflex();
-}
-
-body[class="dark"] {
+@include dark-mode() {
   .header {
     border-bottom-color: $gray-color;
   }
