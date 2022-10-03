@@ -6,6 +6,9 @@ export default function Atropos({ children, className, ...props }) {
     const atropos = A({
       el: ".my-atropos",
       highlight: false,
+      shadow: false,
+      rotateXMax: 20,
+      rotateYMax: 20,
     });
 
     return () => atropos.destroy();
