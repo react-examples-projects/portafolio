@@ -38,6 +38,14 @@
   }
 }
 
+.atroposProfileImage {
+  margin: 0 0 0 auto !important;
+
+  @include querie-md() {
+    margin: 0 auto !important;
+  }
+}
+
 .profileImage {
   margin: 0 0 0 auto !important;
 
@@ -46,10 +54,6 @@
     aspect-ratio: 16 / 9;
     object-fit: cover !important;
     object-position: center;
-  }
-
-  @include querie-md() {
-    margin: 0 auto !important;
   }
 }
 

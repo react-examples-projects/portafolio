@@ -21,7 +21,7 @@ export default function AboutMe() {
           <h2 className="text-gradient">{t("greeting")}</h2>
           <p>{t("bio")}</p>
         </div>
-        <Atropos style={{ marginLeft: "auto" }}>
+        <Atropos className={styles.atroposProfileImage}>
           <Image
             width="200px"
             height="200px"
