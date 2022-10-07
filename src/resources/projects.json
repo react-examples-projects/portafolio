@@ -9,6 +9,24 @@
     "rank": 0
   },
   {
+    "_id": "62dk4607fd53220009a10540",
+    "technologies": ["ReactJS", "SASS"],
+    "title": "Generador de Contraseñas",
+    "description": "Generador de contraseñas donde puedes customizar la complejidad de tu contraseña",
+    "github": "https://github.com/znareak/password-generator/tree/main/src/components/znareak",
+    "link": "https://hacktoberfest-2022-nkak7yn6q-midudev-pro.vercel.app/entry/znareak",
+    "rank": 1
+  },
+  {
+    "_id": "62d9c607fd523420009a10540",
+    "technologies": ["ReactJS", "SASS"],
+    "title": "Diccionario Japonés",
+    "description": "Diccionario con más de 50k de traducciones donde puedes buscar y ver sus significados",
+    "github": "https://github.com/react-examples-projects/japan-dictionary",
+    "link": "https://tangerine-dusk-07e818.netlify.app/",
+    "rank": 0
+  },
+  {
     "_id": "62ae2b902fb4db0009bafc1e",
     "technologies": ["HTML5", "CSS3", "Javascript", "SASS"],
     "title": "Landing Page",
