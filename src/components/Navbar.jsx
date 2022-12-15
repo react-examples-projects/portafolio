@@ -14,8 +14,8 @@ export default function Navbar() {
       ? "claro"
       : "light"
     : i18n.language === "es"
-    ? "oscuro"
-    : "dark";
+      ? "oscuro"
+      : "dark";
 
   const toggleLanguage = () => {
     if (i18n.language === "es") {
@@ -41,12 +41,12 @@ export default function Navbar() {
           />
           <Button
             type="abort"
-            title={t("btnLanguageTitle", { lang})}
-            aria-label={t("btnLanguageTitle", { lang})}
+            title={t("btnLanguageTitle", { lang })}
+            aria-label={t("btnLanguageTitle", { lang })}
             onClick={toggleLanguage}
             auto
           >
-            {i18n.language.toUpperCase()}
+            {i18n.language === "en" ? "ES" : "EN"}
           </Button>
         </div>
       </div>

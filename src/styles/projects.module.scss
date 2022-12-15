@@ -68,7 +68,7 @@
   }
 
   @include querie-md() {
-    flex: 0 0 calc(100% - 10px);
+    flex: 0 0 100%;
   }
 }
 

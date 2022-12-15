@@ -8,11 +8,13 @@ import {
 import { useTranslation } from "react-i18next";
 import Atropos from "./Atropos";
 import Profile from "../resources/profile.webp";
-import CV from "../resources/cv.pdf";
+import CV_ES from "../resources/cv_es.pdf";
+import CV_EN from "../resources/cv_en.pdf";
 import styles from "../styles/aboutme.module.scss";
 
 export default function AboutMe() {
-  const { t } = useTranslation(["aboutme"]);
+  const { t, i18n } = useTranslation(["aboutme"]);
+  const cv_href = i18n.language === "es" ? CV_ES : CV_EN;
 
   return (
     <section className={styles.aboutMe}>
@@ -34,7 +36,7 @@ export default function AboutMe() {
       </div>
 
       <div className={styles.aboutSocial}>
-        <Link href={CV} target="_blank" rel="noreferrer noopener">
+        <Link href={cv_href} target="_blank" rel="noreferrer noopener">
           <Button iconRight={<RiFileList2Line />} type="success-light" auto>
             {t("cv")}
           </Button>
@@ -56,7 +58,7 @@ export default function AboutMe() {
         </Link>
 
         <Link
-          href="https://www.linkedin.com/in/libardo-rengifo-561a04187/"
+          href="https://www.linkedin.com/in/libardorengifo/"
           target="_blank"
           rel="noreferrer noopener"
         >
