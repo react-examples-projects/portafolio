@@ -39,9 +39,8 @@
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  padding-right: 1rem;
   margin: 2rem 0 3rem 0;
-  gap: 5px;
+  gap: 5px; 
 
   @include querie-sm() {
     padding-right: 0;

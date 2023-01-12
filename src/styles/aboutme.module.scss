@@ -19,7 +19,7 @@
   max-width: 450px;
 
   h2 {
-    font-weight: bolder;
+    font-weight: 900;
   }
 
   @include querie-md() {
@@ -31,10 +31,11 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: 0.5rem;
+  margin-top: -1.5rem;
 
   @include querie-md() {
     justify-content: center;
+    margin-top: 0.5rem;
   }
 }
 
@@ -53,7 +54,7 @@
   border: 0;
   z-index: 2;
 
-  >img {
+  > img {
     border-radius: 50%;
     aspect-ratio: 16 / 9;
     object-fit: cover !important;
@@ -72,18 +73,21 @@
     height: 100%;
     padding: var(--border-width);
     border-radius: var(--border-radius);
-    background-image: conic-gradient(#488cfb,
-        #29dbbc,
-        #ddf505,
-        #ff9f0e,
-        #e440bb,
-        #655adc,
-        #488cfb);
+    background-image: conic-gradient(
+      #488cfb,
+      #29dbbc,
+      #ddf505,
+      #ff9f0e,
+      #e440bb,
+      #655adc,
+      #488cfb
+    );
     -webkit-mask-image: var(--m-i), var(--m-i);
     mask-image: var(--m-i), var(--m-i);
     -webkit-mask-origin: var(--m-o);
     mask-origin: var(--m-o);
     -webkit-mask-clip: var(--m-o);
+    mask-clip: var(--m-o);
     mask-composite: exclude;
     -webkit-mask-composite: destination-out;
     filter: hue-rotate(0);
@@ -96,6 +100,12 @@
   .aboutSocial button.button:not(:hover) {
     background-color: $dark-button-social-color;
     border-color: $gray-color;
+    &:focus {
+      color: #fff;
+      > span svg {
+        color: #fff;
+      }
+    }
   }
 }
 

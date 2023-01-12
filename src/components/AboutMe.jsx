@@ -12,6 +12,8 @@ import CV_ES from "../resources/cv_es.pdf";
 import CV_EN from "../resources/cv_en.pdf";
 import styles from "../styles/aboutme.module.scss";
 
+const IMG_SIZE = 230;
+
 export default function AboutMe() {
   const { t, i18n } = useTranslation(["aboutme"]);
   const cv_href = i18n.language === "es" ? CV_ES : CV_EN;
@@ -25,8 +27,8 @@ export default function AboutMe() {
         </div>
         <Atropos className={styles.atroposProfileImage}>
           <Image
-            width="200px"
-            height="200px"
+            width={IMG_SIZE + "px"}
+            height={IMG_SIZE + "px"}
             alt={t("profile")}
             title={t("profile")}
             className={styles.profileImage}
