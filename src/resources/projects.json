@@ -9,7 +9,7 @@
     "rank": 0
   },
   {
-    "_id": "62dk4607fd53220009a10540",
+    "_id": "62dk4607fdf53220009a10540",
     "technologies": ["HTML5", "CSS3", "Javascript"],
     "title": "Algorítmo de las 8 reinas",
     "description": "Busqueda gráfica de todas las soluciones del famoso puzzle de las 8 reinas.",

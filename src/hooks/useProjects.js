@@ -12,9 +12,7 @@ export default function useProjects() {
   useEffect(() => {
     const filterProjects = (rank) => {
       if(rank === undefined) return p.sort((p1, p2) => p2.rank - p1.rank);
-      return p
-        .filter((p) => p.rank === rank)
-        .sort((p1, p2) => p2.rank - p1.rank);
+      return p.filter((p) => p.rank === rank)
     };
     const FILTERS = {
       all        : _ => filterProjects(),
