@@ -10,21 +10,19 @@ export default function useProjects() {
   };
 
   useEffect(() => {
-    const FILTERS = {
-      all() {
-        return p.sort((p1, p2) => p2.rank - p1.rank);
-      },
-      importants() {
-        return p.filter((p) => p.rank === 2);
-      },
-      casuals() {
-        return p.filter((p) => p.rank === 1);
-      },
-      practice() {
-        return p.filter((p) => p.rank === 0);
-      },
+    const filterProjects = (rank) => {
+      if(rank === undefined) return p.sort((p1, p2) => p2.rank - p1.rank);
+      return p
+        .filter((p) => p.rank === rank)
+        .sort((p1, p2) => p2.rank - p1.rank);
     };
-    
+    const FILTERS = {
+      all        : _ => filterProjects(),
+      importants : _ => filterProjects(2),
+      casuals    : _ => filterProjects(1),
+      practice   : _ => filterProjects(0),
+    };
+
     const sorted = FILTERS[filter]();
     setProjects(sorted);
   }, [filter]);
