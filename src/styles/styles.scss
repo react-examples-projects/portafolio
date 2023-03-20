@@ -28,7 +28,7 @@ code {
   border: 1px solid $gray-color;
   padding: 0.6rem;
   font-family: monospace;
-  color: $black-color  !important;
+  color: $black-color !important;
 
   &::before,
   &::after {
@@ -42,6 +42,42 @@ code {
   padding: 0 1rem;
   margin: auto;
   padding-bottom: 2rem;
+  position: relative;
+}
+
+.gradient1 {
+  position: absolute;
+  z-index: -1;
+  left: -4rem;
+  top: -20rem;
+  filter: blur(2rem);
+
+  @include querie-md() {
+    top: 0;
+    left: 0;
+  }
+
+  @include querie-sm() {
+    top: 8rem;
+    left: 0;
+    transform: scale(1.5);
+  }
+}
+
+.select-dropdown {
+  background-color: $filter-projects-color !important;
+
+  > div.option {
+    background-color: transparent;
+
+    &:hover {
+      background-color: darken($filter-projects-color, 4) !important;
+    }
+
+    span {
+      color: #fff;
+    }
+  }
 }
 
 .fadeIn {
@@ -91,17 +127,17 @@ code {
   color: $dark-text-color;
 
   code {
-    color: $dark-text-color  !important;
+    color: $dark-text-color !important;
   }
 }
 
-@include querie-md () {
+@include querie-md() {
   body {
     font-size: 15px !important;
   }
 }
 
-@include querie-sm () {
+@include querie-sm() {
   .wrapper {
     padding: 0;
   }

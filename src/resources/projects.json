@@ -71,6 +71,27 @@
     "github": "https://github.com/znareak/challenge",
     "rank": 2
   },
+
+  {
+    "_id": "60abd43933f4t70hghgjhgjhgbd41b",
+    "technologies": ["ReactJS", "NodeJS", "ExpressJS"],
+    "title": "ShortYou",
+    "description": "Plataforma para subir videos, cuenta con previews y lazyload para carga de videos.",
+    "github": "https://github.com/react-examples-projects/shortyou",
+    "link": "https://shortyou.vercel.app/",
+    "rank": 2
+  },
+
+  {
+    "_id": "60abd43933f4t70hgf085bd41b",
+    "technologies": ["ReactJS", "NodeJS", "ExpressJS"],
+    "title": "Cohere AI App ",
+    "description": "Generador de contenido para redes sociales usando una inteligencia artificial para generar textos, cuenta con previsualización.",
+    "github": "https://github.com/react-examples-projects/cohere-ia",
+    "link": "https://contentgenerator.vercel.app/",
+    "rank": 2
+  },
+
   {
     "_id": "62996c60c53ecf00095aeb6c",
     "technologies": ["ReactJS", "SASS"],
