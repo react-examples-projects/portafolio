@@ -3,6 +3,7 @@
 .header {
   padding: 1.2rem 2rem;
   border-bottom: 1px solid $light-color;
+  backdrop-filter:  blur(5rem);
 
   @include querie-sm () {
     padding: 1.2rem 0.8rem;
