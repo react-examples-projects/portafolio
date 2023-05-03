@@ -1,5 +1,5 @@
 @import "./variables/vars";
-
+/* autoprefixer: on */
 .projects {
   margin-top: 3rem;
 }
@@ -40,7 +40,7 @@
   flex-wrap: wrap;
   justify-content: space-between;
   margin: 2rem 0 3rem 0;
-  gap: 5px; 
+  gap: 5px;
 
   @include querie-sm() {
     padding-right: 0;
@@ -61,7 +61,7 @@
     margin-bottom: 0;
   }
 
-  >p {
+  > p {
     font-size: 14px;
     margin-top: 0.5rem;
   }
@@ -77,8 +77,8 @@
   gap: 5px;
   margin-top: auto;
 
-  >span {
-    border-color: $light-gray  !important;
+  > span {
+    border-color: $light-gray !important;
   }
 }
 
@@ -88,14 +88,19 @@
 
 @include dark-mode {
   .project {
-    @include setBackgroundBorder($gray-color, $dark-project-background );
+    background: linear-gradient(
+      to top right,
+      $dark-project-background,
+      lighten($dark-background-color, 1.8%)
+    );
+    border: 1px solid $gray-color;
   }
 
-  .technologies>span {
+  .technologies > span {
     @include setBackgroundBorder($gray-color, transparent);
   }
 
   .filterContainer {
-    background-color: $dark-filter-projects-background  !important;
+    background-color: $dark-filter-projects-background !important;
   }
 }

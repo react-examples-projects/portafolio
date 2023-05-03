@@ -1,11 +1,7 @@
 @import "./variables/vars";
-
+/* autoprefixer: on */
 ::-webkit-scrollbar {
   width: 6px;
-}
-
-::-webkit-scrollbar-track {
-  background: $scroll-track-color;
 }
 
 ::-webkit-scrollbar-thumb {
@@ -43,6 +39,7 @@ code {
   margin: auto;
   padding-bottom: 2rem;
   position: relative;
+  //overflow-x: hidden;
 }
 
 .gradient1 {
@@ -126,6 +123,9 @@ code {
   background-color: $dark-background-color;
   color: $dark-text-color;
 
+  &::-webkit-scrollbar-track {
+    background: $dark-background-color;
+  }
   code {
     color: $dark-text-color !important;
   }
@@ -140,5 +140,6 @@ code {
 @include querie-sm() {
   .wrapper {
     padding: 0;
+    overflow-x: hidden;
   }
 }

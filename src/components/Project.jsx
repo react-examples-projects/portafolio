@@ -38,7 +38,7 @@ export default function Project({
             style={{ marginLeft: github ? "1rem" : "0" }}
             color
           >
-            <small>Ver en linea</small>
+            <small>Demo</small>
           </Link>
         )}
       </div>

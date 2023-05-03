@@ -13,7 +13,7 @@ export default function Footer() {
         <Link
           href="https://github.com/znareak"
           rel="noopener noreferrer"
-          style={{ margin: "0 0 0 5px" }}
+          style={{ margin: "0 0 0 5px", display: "block" }}
           target="_blank"
           color
         >
@@ -29,7 +29,7 @@ export default function Footer() {
           target="_blank"
           color
         >
-          <DiGithubBadge className={styles.icon} style={{ fontSize: "1rem" }} />
+          <DiGithubBadge className={styles.icon} style={{ fontSize: "1.2rem" }} />
           Repositorio
         </Link>
       </small>

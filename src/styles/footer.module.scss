@@ -5,8 +5,12 @@
   @include h-center();
 }
 
+.copyright{
+  margin-left: 10px;
+}
+
 .footer {
-  color: $footer-text-color  !important;
+  color: $footer-text-color !important;
   justify-content: center;
   margin-top: 3rem;
 }

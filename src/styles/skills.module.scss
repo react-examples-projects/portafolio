@@ -5,8 +5,8 @@
   flex-wrap: wrap;
   gap: 8px;
 
-  >span {
-    border-color: $light-gray  !important;
+  > span {
+    border-color: $light-gray !important;
     cursor: default;
     padding: 1.3rem 1rem !important;
 
@@ -22,7 +22,7 @@
 }
 
 @include dark-mode {
-  .skillsList>span {
+  .skillsList > span {
     @include setBackgroundBorder($gray-color, $dark-skills-color);
   }
 }
