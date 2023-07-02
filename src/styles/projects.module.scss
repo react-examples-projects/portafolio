@@ -10,6 +10,7 @@
 
 .content {
   display: flex;
+  margin-bottom: 2rem;
 
   @include querie-sm() {
     flex-direction: column;
@@ -47,11 +48,18 @@
   }
 }
 
+.column > div{
+  display: block !important;
+}
+
 .project {
   display: flex;
   flex-direction: column;
   flex: 0 0 calc(50% - 5px);
   margin-bottom: 0.5rem;
+  isolation: isolate;
+  overflow: hidden;
+  position: relative;
   padding: 1rem;
   border: 1px solid $project-list-border-color;
   border-radius: 8px;
@@ -66,6 +74,8 @@
     margin-top: 0.5rem;
   }
 
+ 
+
   @include querie-md() {
     flex: 0 0 100%;
   }
@@ -75,7 +85,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 5px;
-  margin-top: auto;
+  // margin-top: auto;
 
   > span {
     border-color: $light-gray !important;
@@ -91,9 +101,35 @@
     background: linear-gradient(
       to top right,
       $dark-project-background,
-      lighten($dark-background-color, 1.8%)
+      lighten($dark-background-color, 5%)
     );
-    border: 1px solid $gray-color;
+    border-color: transparent;
+  
+
+     &::before {
+    background: linear-gradient(
+        18.48deg,
+        rgba(255, 255, 255, 0.25) 2.76%,
+        rgba(255, 255, 255, 0) 17.23%
+      ),
+      linear-gradient(
+        200.6deg,
+        rgba(255, 255, 255, 0.25) 4.13%,
+        rgba(255, 255, 255, 0) 20.54%
+      );
+    border-radius: inherit;
+    content: "";
+    inset: 0;
+    -webkit-mask: linear-gradient(#eee 0 0) content-box,
+      linear-gradient(#eee 0 0);
+    mask: linear-gradient(#eee 0 0) content-box, linear-gradient(#eee 0 0);
+    mask-composite: xor;
+    -webkit-mask-composite: xor;
+    mask-composite: exclude;
+    padding: 1px;
+    pointer-events: none;
+    position: absolute;
+  }
   }
 
   .technologies > span {

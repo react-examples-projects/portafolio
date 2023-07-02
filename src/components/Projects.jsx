@@ -1,6 +1,7 @@
 import styles from "../styles/projects.module.scss";
 import useProjects from "../hooks/useProjects";
 import Project from "./Project";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import { Select } from "@geist-ui/core";
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
@@ -44,11 +45,13 @@ export default function Projects() {
         </div>
       </div>
 
-      <div className={styles.projectList}>
-        {projects.map((props) => (
-          <Project {...props} key={props._id} />
-        ))}
-      </div>
+      <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 2 }} >
+        <Masonry gutter="12px" columnsCount={2} className={styles.column}>
+          {projects.map((props) => (
+            <Project {...props} key={props._id} />
+          ))}
+        </Masonry>
+      </ResponsiveMasonry>
     </section>
   );
 }
