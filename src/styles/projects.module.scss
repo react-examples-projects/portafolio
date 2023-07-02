@@ -6,11 +6,12 @@
 
 .subtitle {
   margin: 0;
+  margin-bottom: 1rem;
 }
 
 .content {
   display: flex;
-  margin-bottom: 2rem;
+  margin-bottom: 0.5rem;
 
   @include querie-sm() {
     flex-direction: column;

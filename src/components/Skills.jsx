@@ -7,6 +7,7 @@ import {
   SiSass,
   SiMongodb,
   SiGithub,
+  SiNextdotjs
 } from "react-icons/si";
 import styles from "../styles/skills.module.scss";
 
@@ -25,6 +26,10 @@ export default function Skills() {
         <Tag scale={1.5} style={css.tag}>
           <SiReact style={css.icon} />
           React
+        </Tag>
+        <Tag scale={1.5} style={css.tag}>
+          <SiNextdotjs style={css.icon} />
+          NextJS
         </Tag>
         <Tag scale={1.5} style={css.tag}>
           <SiNodedotjs style={css.icon} />

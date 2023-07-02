@@ -2,13 +2,16 @@ import styles from "../styles/projects.module.scss";
 import useProjects from "../hooks/useProjects";
 import Project from "./Project";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
-import { Select } from "@geist-ui/core";
+import { Button, Select } from "@geist-ui/core";
 import { useTranslation } from "react-i18next";
 import { useEffect } from "react";
-
+import usePagination from "../hooks/usePagination";
+import styles2 from "../styles/aboutme.module.scss";
 export default function Projects() {
   const { t } = useTranslation(["projects"]);
   const { projects, filter, onFilter } = useProjects();
+  const { nextPage, previousPage, data, pages, currentPage } =
+    usePagination(projects);
 
   useEffect(() => {
     const parent = document.getElementById("filter");
@@ -45,13 +48,39 @@ export default function Projects() {
         </div>
       </div>
 
-      <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 2 }} >
+      <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 2 }}>
         <Masonry gutter="12px" columnsCount={2} className={styles.column}>
-          {projects.map((props) => (
+          {data.map((props) => (
             <Project {...props} key={props._id} />
           ))}
         </Masonry>
       </ResponsiveMasonry>
+
+      <div style={{ marginTop: "0.3rem" }}>
+        <Button
+          onClick={nextPage}
+          className={styles2.button}
+          type="secondary"
+          style={{ marginRight: "5px" }}
+          scale={0.7}
+          disabled={currentPage === pages}
+          ghost
+          auto
+        >
+          Siguiente
+        </Button>
+        <Button
+          onClick={previousPage}
+          className={styles2.button}
+          type="secondary"
+          scale={0.7}
+          disabled={currentPage === 1}
+          ghost
+          auto
+        >
+          Anterior
+        </Button>
+      </div>
     </section>
   );
 }

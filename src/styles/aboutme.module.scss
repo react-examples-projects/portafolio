@@ -49,7 +49,7 @@
 
 .profileImage {
   --border-radius: 50%;
-  --border-width: 5px;
+  --border-width: 2.8px;
   border-radius: 50% !important;
   border: 0;
   z-index: 2;
@@ -97,13 +97,13 @@
 }
 
 @include dark-mode() {
-  .aboutSocial button.button:not(:hover) {
-    background-color: $dark-button-social-color;
-    border-color: $gray-color;
+  button.button:not(:hover) {
+    background-color: $dark-button-social-color !important;
+    border-color: $gray-color !important;
     &:focus {
-      color: #fff;
+      color: #fff !important;
       > span svg {
-        color: #fff;
+        color: #fff !important;
       }
     }
   }

@@ -9,10 +9,11 @@
     border-color: $light-gray !important;
     cursor: default;
     padding: 1.3rem 1rem !important;
-
+    font-size: 15px !important;
+    
     @include querie-sm() {
       padding: 1rem 0.8rem !important;
-      font-size: 16px !important;
+      font-size: 14px !important;
     }
   }
 }
