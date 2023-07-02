@@ -10,8 +10,7 @@ import styles2 from "../styles/aboutme.module.scss";
 export default function Projects() {
   const { t } = useTranslation(["projects"]);
   const { projects, filter, onFilter } = useProjects();
-  const { nextPage, previousPage, data, pages, currentPage } =
-    usePagination(projects);
+  const { nextPage, previousPage, data, pages, currentPage, ITEMS_PER_PAGE } = usePagination(projects);
 
   useEffect(() => {
     const parent = document.getElementById("filter");
@@ -56,31 +55,33 @@ export default function Projects() {
         </Masonry>
       </ResponsiveMasonry>
 
-      <div style={{ marginTop: "0.3rem" }}>
-        <Button
-          onClick={nextPage}
-          className={styles2.button}
-          type="secondary"
-          style={{ marginRight: "5px" }}
-          scale={0.7}
-          disabled={currentPage === pages}
-          ghost
-          auto
-        >
-          Siguiente
-        </Button>
-        <Button
-          onClick={previousPage}
-          className={styles2.button}
-          type="secondary"
-          scale={0.7}
-          disabled={currentPage === 1}
-          ghost
-          auto
-        >
-          Anterior
-        </Button>
-      </div>
+      {projects.length > ITEMS_PER_PAGE && (
+        <div style={{ marginTop: "0.3rem" }}>
+          <Button
+            onClick={nextPage}
+            className={styles2.button}
+            type="secondary"
+            style={{ marginRight: "5px" }}
+            scale={0.7}
+            disabled={currentPage === pages}
+            ghost
+            auto
+          >
+            Siguiente
+          </Button>
+          <Button
+            onClick={previousPage}
+            className={styles2.button}
+            type="secondary"
+            scale={0.7}
+            disabled={currentPage === 1}
+            ghost
+            auto
+          >
+            Anterior
+          </Button>
+        </div>
+      )}
     </section>
   );
 }
