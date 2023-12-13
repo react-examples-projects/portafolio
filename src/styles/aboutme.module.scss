@@ -2,6 +2,8 @@
 /* autoprefixer: on */
 .aboutMe {
   margin-top: 2rem;
+  position: relative;
+  z-index: 2;
 }
 
 .aboutContent {
@@ -49,7 +51,7 @@
 
 .profileImage {
   --border-radius: 50%;
-  --border-width: 2.8px;
+  --border-width: 2px;
   border-radius: 50% !important;
   border: 0;
   z-index: 2;
@@ -73,15 +75,7 @@
     height: 100%;
     padding: var(--border-width);
     border-radius: var(--border-radius);
-    background-image: conic-gradient(
-      #488cfb,
-      #29dbbc,
-      #ddf505,
-      #ff9f0e,
-      #e440bb,
-      #655adc,
-      #488cfb
-    );
+    background-image: conic-gradient(#488cfb, #655adc, #e440bb, #488cfb);
     -webkit-mask-image: var(--m-i), var(--m-i);
     mask-image: var(--m-i), var(--m-i);
     -webkit-mask-origin: var(--m-o);
@@ -91,7 +85,7 @@
     mask-composite: exclude;
     -webkit-mask-composite: destination-out;
     filter: hue-rotate(0);
-    animation: rotate-hue linear 900ms infinite;
+    animation: rotate-hue linear 2000ms infinite;
     animation-play-state: running;
   }
 }

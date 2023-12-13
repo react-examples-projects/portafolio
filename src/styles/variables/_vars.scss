@@ -11,6 +11,7 @@ $footer-text-color : rgb(158, 158, 158);
 $page-spinner-color: rgba(51, 50, 50, 0.349);
 $project-list-border-color : rgb(214, 214, 214);
 $filter-projects-color: #141924;
+$dark-light :#ffffff08;
 
 // dark mode variables
 $dark-background-color : #1a202c;
@@ -20,7 +21,7 @@ $dark-page-loader-background: #1a202c;
 $dark-page-spinner-color: rgb(255, 255, 255, .2);
 $dark-project-background: rgba(0, 0, 0, 0.021);
 $dark-filter-projects-background: $light-black;
-$dark-skills-color: $light-black;
+$dark-skills-color: $dark-light ;
 
 @mixin gradient() {
   background: -o-linear-gradient(to top, #02aab0, #00cdac);

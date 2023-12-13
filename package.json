@@ -4,6 +4,8 @@
   "private": true,
   "dependencies": {
     "@geist-ui/core": "2.3.8",
+    "@vercel/analytics": "^1.1.1",
+    "@vercel/speed-insights": "^1.0.1",
     "atropos": "2.0.1",
     "i18next": "23.2.6",
     "i18next-browser-languagedetector": "7.1.0",

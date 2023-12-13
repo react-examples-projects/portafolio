@@ -7,7 +7,7 @@ import {
 } from "react-icons/ri";
 import { useTranslation } from "react-i18next";
 import Atropos from "./Atropos";
-import Profile from "../resources/profile.webp";
+import Profile from "../resources/profile.png";
 import CV_ES from "../resources/cv_es.pdf";
 import CV_EN from "../resources/cv_en.pdf";
 import styles from "../styles/aboutme.module.scss";

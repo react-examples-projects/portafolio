@@ -44,10 +44,12 @@ code {
 
 .gradient1 {
   position: absolute;
-  z-index: -1;
+  z-index: 1;
   left: -4rem;
   top: -20rem;
   filter: blur(2rem);
+  user-select: none;
+  pointer-events: none;
 
   @include querie-md() {
     top: 0;
@@ -128,6 +130,8 @@ code {
   }
   code {
     color: $dark-text-color !important;
+    background-color: $dark-light ;
+    padding: 14px;
   }
 }
 
