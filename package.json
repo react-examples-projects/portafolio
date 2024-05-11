@@ -1,37 +1,42 @@
 {
   "name": "portfolio",
-  "version": "0.1.0",
+  "version": "3.0.0",
   "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "eslint . --ext js,jsx --report-unused-disable-directives --max-warnings 0",
+    "preview": "vite preview"
+  },
   "dependencies": {
-    "@geist-ui/core": "2.3.8",
-    "@vercel/analytics": "^1.1.1",
-    "@vercel/speed-insights": "^1.0.1",
-    "atropos": "2.0.1",
-    "i18next": "23.2.6",
-    "i18next-browser-languagedetector": "7.1.0",
-    "i18next-chained-backend": "4.4.0",
-    "i18next-http-backend": "2.2.1",
-    "i18next-localstorage-backend": "4.1.1",
-    "inter-ui": "3.19.3",
     "react": "18.2.0",
     "react-dom": "18.2.0",
-    "react-i18next": "13.0.1",
-    "react-icons": "4.10.1",
-    "react-responsive-masonry": "^2.1.7",
-    "react-scripts": "5.0.1",
-    "sass": "1.63.6"
+    "@geist-ui/core": "2.3.8",
+    "@vercel/analytics": "1.2.2",
+    "@vercel/speed-insights": "1.0.10",
+    "atropos": "2.0.2",
+    "i18next": "23.11.4",
+    "i18next-browser-languagedetector": "7.2.1",
+    "i18next-chained-backend": "4.6.2",
+    "i18next-http-backend": "2.5.1",
+    "i18next-localstorage-backend": "4.2.0",
+    "inter-ui": "4.0.2",
+    "react-i18next": "14.1.1",
+    "react-icons": "5.2.1",
+    "react-responsive-masonry": "2.2.0",
+    "sass": "1.77.1"
   },
-  "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
-  },
-  "eslintConfig": {
-    "extends": [
-      "react-app",
-      "react-app/jest"
-    ]
+  "devDependencies": {
+    "@types/react": "18.2.66",
+    "@types/react-dom": "18.2.22",
+    "@vitejs/plugin-react-swc": "3.5.0",
+    "eslint": "8.57.0",
+    "eslint-plugin-react": "7.34.1",
+    "eslint-plugin-react-hooks": "4.6.0",
+    "eslint-plugin-react-refresh": "0.4.6",
+    "vercel": "32.3.0",
+    "vite": "5.2.0"
   },
   "browserslist": {
     "production": [
@@ -46,8 +51,5 @@
       "last 1 safari version",
       "since 2010"
     ]
-  },
-  "devDependencies": {
-    "vercel": "31.0.1"
   }
 }

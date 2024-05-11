@@ -1,9 +1,7 @@
-import React, { Suspense } from "react";
-import ReactDOM from "react-dom/client";
+import { Suspense } from "react";
 import App from "./App";
 import LoaderPage from "./components/loaders/LoaderPage";
 import useThemeContext from "./hooks/useThemeContext";
-import ThemeProvider from "./context/ThemeProvider";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import { Analytics } from "@vercel/analytics/react";
 import { GeistProvider, CssBaseline } from "@geist-ui/core";
@@ -14,9 +12,7 @@ import "./styles/normalize.min.scss";
 import "atropos/css";
 import "./styles/styles.scss";
 
-const root = ReactDOM.createRoot(document.getElementById("root"));
-
-function Index() {
+export default function Index() {
   const { currentTheme } = useThemeContext();
   return (
     <>
@@ -31,11 +27,3 @@ function Index() {
     </>
   );
 }
-
-root.render(
-  <React.StrictMode>
-    <ThemeProvider>
-      <Index />
-    </ThemeProvider>
-  </React.StrictMode>
-);

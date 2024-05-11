@@ -62,11 +62,12 @@ export default function Projects() {
             type="secondary"
             style={{ marginRight: "5px", lineHeight: 3 }}
             scale={0.5}
+            aria-label={t("next")}
             disabled={currentPage === pages}
             ghost
             auto
           >
-            Siguiente
+            &rarr;
           </Button>
           <Button
             onClick={previousPage}
@@ -74,11 +75,12 @@ export default function Projects() {
             type="secondary"
             style={{ lineHeight: 3 }}
             scale={0.5}
+            aria-label={t("prev")}
             disabled={currentPage === 1}
             ghost
             auto
           >
-            Anterior
+            &larr;
           </Button>
         </div>
       )}

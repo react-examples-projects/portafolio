@@ -7,8 +7,8 @@ export default function Atropos({ children, className, ...props }) {
       el: ".my-atropos",
       highlight: false,
       shadow: false,
-      rotateXMax: 20,
-      rotateYMax: 20,
+      rotateXMax: 15,
+      rotateYMax: 15,
     });
 
     return () => atropos.destroy();

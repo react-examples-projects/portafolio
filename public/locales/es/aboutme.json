@@ -1,6 +1,6 @@
 {
   "greeting": "Hola, qué tal?",
-  "bio" :"Desarrollador Full Stack con habilidades técnicas en ReactJS, NodeJS, NextJS, ExpressJS y SASS (MERN Stack). Permanezco en constante aprendizaje en el ámbito del software, comprometido con el trabajo en equipo, la colaboración y la disposición para aprender y ayudar en todas las instancias.",
+  "bio" :"Desarrollador Full Stack especializado en el stack MERN (ReactJS, NodeJS, NextJS, ExpressJS, SASS). Enfocado en el aprendizaje continuo, el trabajo en equipo y la colaboración.",
   "profile":"Mi foto de perfil",
-  "cv":"Ver curriculum"
+  "cv":"Curriculum"
 }

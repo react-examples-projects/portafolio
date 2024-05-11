@@ -1,9 +1,11 @@
 {
   "title": "Proyectos",
   "subtitle": "He aquí algunos de mis proyectos favoritos que he trabajo",
-  "filter":"Filtrar Proyectos",
-  "alls":"Todos",
-  "importants":"Importantes",
-  "casuals":"Casuales",
-  "practices":"Prácticas"
+  "filter": "Filtrar Proyectos",
+  "alls": "Todos",
+  "importants": "Importantes",
+  "casuals": "Casuales",
+  "practices": "Prácticas",
+  "next": "Siguiente",
+  "prev": "Anterior"
 }

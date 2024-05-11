@@ -1,9 +1,11 @@
 {
   "title": "Projects",
   "subtitle": "Here are some of my favorite projects I've worked on",
-  "filter":"Filter Projects",
-  "alls":"All",
-  "importants":"Importants",
-  "casuals":"Casuals",
-  "practices":"Practices"
+  "filter": "Filter Projects",
+  "alls": "All",
+  "importants": "Importants",
+  "casuals": "Casuals",
+  "practices": "Practices",
+  "next": "Next",
+  "prev": "Previous"
 }

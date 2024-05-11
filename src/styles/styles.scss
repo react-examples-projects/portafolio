@@ -5,8 +5,12 @@
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 4px;
   background: $scroll-thumb-color;
+}
+
+::selection {
+  color: fff !important;
+  background: rgb(57, 57, 255) !important;
 }
 
 * {
@@ -17,6 +21,14 @@
   text-rendering: optimizeLegibility;
   margin: 0;
   padding: 0;
+}
+
+body {
+  cursor: url("/cursor.png"), auto;
+}
+
+:where(a, button, .select, .select > *, input, .option):hover {
+  cursor: url("/pointer.png"), auto !important;
 }
 
 code {
@@ -130,7 +142,7 @@ code {
   }
   code {
     color: $dark-text-color !important;
-    background-color: $dark-light ;
+    background-color: $dark-light;
     padding: 14px;
   }
 }

@@ -1,31 +1,47 @@
 @import "./variables/vars";
 /* autoprefixer: on */
+
+$profileImageSizeSm: 200px;
+
 .aboutMe {
   margin-top: 2rem;
   position: relative;
   z-index: 2;
+
+  @include querie-md() {
+    margin-top: 0.5rem;
+  }
 }
 
 .aboutContent {
   display: flex;
+  gap: 2rem;
 
   @include querie-md() {
     flex-direction: column-reverse;
     align-items: center;
     text-align: center;
   }
+
+  @include querie-sm() {
+    gap: 1rem;
+  }
 }
 
 .aboutBio {
   width: 100%;
-  max-width: 450px;
+  max-width: max-content;
 
   h2 {
     font-weight: 900;
   }
 
   @include querie-md() {
-    margin-top: 2rem;
+    margin-top: 0.5rem;
+  }
+
+  @include querie-sm() {
+    margin-top: 0;
   }
 }
 
@@ -33,7 +49,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 8px;
-  margin-top: -0.5rem;
+  margin-top: 2rem;
 
   @include querie-md() {
     justify-content: center;
@@ -47,11 +63,15 @@
   @include querie-md() {
     margin: 0 auto !important;
   }
+
+  @include querie-sm() {
+    height: $profileImageSizeSm !important;
+  }
 }
 
 .profileImage {
-  --border-radius: 50%;
-  --border-width: 2px;
+  // --border-radius: 50%;
+  // --border-width: 2px;
   border-radius: 50% !important;
   border: 0;
   z-index: 2;
@@ -62,32 +82,37 @@
     object-fit: cover !important;
     object-position: center;
     display: block;
+
+    @include querie-sm() {
+      width: $profileImageSizeSm !important;
+      height: $profileImageSizeSm !important;
+    }
   }
 
-  &::after {
-    --m-i: linear-gradient(#000, #000);
-    --m-o: content-box, padding-box;
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    height: 100%;
-    padding: var(--border-width);
-    border-radius: var(--border-radius);
-    background-image: conic-gradient(#488cfb, #655adc, #e440bb, #488cfb);
-    -webkit-mask-image: var(--m-i), var(--m-i);
-    mask-image: var(--m-i), var(--m-i);
-    -webkit-mask-origin: var(--m-o);
-    mask-origin: var(--m-o);
-    -webkit-mask-clip: var(--m-o);
-    mask-clip: var(--m-o);
-    mask-composite: exclude;
-    -webkit-mask-composite: destination-out;
-    filter: hue-rotate(0);
-    animation: rotate-hue linear 2000ms infinite;
-    animation-play-state: running;
-  }
+  // &::after {
+  //   --m-i: linear-gradient(#000, #000);
+  //   --m-o: content-box, padding-box;
+  //   content: "";
+  //   position: absolute;
+  //   left: 0;
+  //   top: 0;
+  //   width: 100%;
+  //   height: 100%;
+  //   padding: var(--border-width);
+  //   border-radius: var(--border-radius);
+  //   background-image: conic-gradient(#488cfb, #655adc, #e440bb, #488cfb);
+  //   -webkit-mask-image: var(--m-i), var(--m-i);
+  //   mask-image: var(--m-i), var(--m-i);
+  //   -webkit-mask-origin: var(--m-o);
+  //   mask-origin: var(--m-o);
+  //   -webkit-mask-clip: var(--m-o);
+  //   mask-clip: var(--m-o);
+  //   mask-composite: exclude;
+  //   -webkit-mask-composite: destination-out;
+  //   filter: hue-rotate(0);
+  //   animation: rotate-hue linear 2000ms infinite;
+  //   animation-play-state: running;
+  // }
 }
 
 @include dark-mode() {
@@ -103,8 +128,8 @@
   }
 }
 
-@keyframes rotate-hue {
-  to {
-    filter: hue-rotate(1turn);
-  }
-}
+// @keyframes rotate-hue {
+//   to {
+//     filter: hue-rotate(1turn);
+//   }
+// }
