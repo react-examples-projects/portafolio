@@ -31,6 +31,10 @@ body {
   cursor: url("/pointer.png"), auto !important;
 }
 
+:where(a, button, .select, .select > *, input, .option):disabled{
+    cursor: url("/notallowed.png"), auto !important;
+}
+
 code {
   border-radius: 5px;
   border: 1px solid $gray-color;

@@ -36,30 +36,14 @@
   }
 }
 
-.projectList {
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: space-between;
-  margin: 2rem 0 3rem 0;
-  gap: 5px;
-
-  @include querie-sm() {
-    padding-right: 0;
-  }
-}
-
-.column > div {
-  display: block !important;
-}
-
-.projectContainer {
-  margin-bottom: 0.7rem;
-}
-
 .project {
   padding: 1rem;
   border: 1px solid $project-list-border-color;
   border-radius: 8px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
 
   h3 {
     font-size: 1rem;
@@ -94,8 +78,6 @@
   .projectContainer {
     display: flex;
     flex-direction: column;
-    flex: 0 0 calc(50% - 5px);
-    margin-bottom: 0.5rem;
     isolation: isolate;
     overflow: hidden;
     position: relative;
