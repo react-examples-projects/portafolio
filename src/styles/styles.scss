@@ -23,16 +23,21 @@
   padding: 0;
 }
 
+html,
 body {
-  cursor: url("/cursor.png"), auto;
+  min-height: 100dvh !important;
+}
+
+body {
+  cursor: url("/cursor.png"), auto !important;
 }
 
 :where(a, button, .select, .select > *, input, .option):hover {
   cursor: url("/pointer.png"), auto !important;
 }
 
-:where(a, button, .select, .select > *, input, .option):disabled{
-    cursor: url("/notallowed.png"), auto !important;
+:where(a, button, .select, .select > *, input, .option):disabled {
+  cursor: url("/notallowed.png"), auto !important;
 }
 
 code {
@@ -76,22 +81,6 @@ code {
     top: 8rem;
     left: 0;
     transform: scale(1.5);
-  }
-}
-
-.select-dropdown {
-  background-color: $filter-projects-color !important;
-
-  > div.option {
-    background-color: transparent;
-
-    &:hover {
-      background-color: darken($filter-projects-color, 4) !important;
-    }
-
-    span {
-      color: #fff;
-    }
   }
 }
 
@@ -148,6 +137,21 @@ code {
     color: $dark-text-color !important;
     background-color: $dark-light;
     padding: 14px;
+  }
+  .select-dropdown {
+    background-color: $dark-background-color !important;
+
+    > div.option {
+      background-color: transparent;
+
+      &:hover {
+        background-color: darken($dark-background-color, 4) !important;
+      }
+
+      span {
+        color: #fff;
+      }
+    }
   }
 }
 
