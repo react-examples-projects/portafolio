@@ -6,20 +6,19 @@
 
 .subtitle {
   margin: 0;
-  margin-bottom: 1rem;
 }
 
 .content {
   display: flex;
+  margin-top: 7rem;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 
   @include querie-sm() {
     flex-direction: column;
   }
-}
-
-.label {
-  display: block;
-  margin-bottom: 0.5rem;
 }
 
 .filter {
@@ -27,6 +26,7 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
+  align-items: center;
   margin-left: auto;
 
   @include querie-sm() {

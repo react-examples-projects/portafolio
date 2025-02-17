@@ -63,6 +63,15 @@
     "rank": 1
   },
   {
+    "_id": "6299fkJ9Cc6fddsqwewqeqwedecs00095aeb6c",
+    "technologies": ["ReactJS", "SASS"],
+    "title": "VDiagram",
+    "description": "Creador de diagramas de flujo Básico, puedes arrastrar y editar elementos.",
+    "link": "https://vdiagram.vercel.app/",
+    "github": "https://github.com/react-examples-projects/vdiagram-vercel",
+    "rank": 2
+  },
+  {
     "_id": "6299fkJ9Cc60cFg3ecs00095aeb6c",
     "technologies": ["ReactJS", "SASS"],
     "title": "Lens IA feed",
@@ -129,13 +138,7 @@
   },
   {
     "_id": "619a6b993d15af00086dc211",
-    "technologies": [
-      "ReactJS",
-      "NodeJS",
-      "Javascript",
-      "ExpressJS",
-      "Mongoose"
-    ],
+    "technologies": ["ReactJS", "NodeJS", "Javascript", "ExpressJS", "Mongoose"],
     "title": "Pomodoro App",
     "description": "Aplicación básica que permite administrar notas y las tareas con la técnica pomodoro.",
     "github": "",
@@ -144,14 +147,7 @@
   },
   {
     "_id": "6137b09f19590400082ad99e",
-    "technologies": [
-      "ReactJS",
-      "NodeJS",
-      "Javascript",
-      "SASS",
-      "ExpressJS",
-      "Mongoose"
-    ],
+    "technologies": ["ReactJS", "NodeJS", "Javascript", "SASS", "ExpressJS", "Mongoose"],
     "title": "MERN Template",
     "description": "Una plantilla para iniciar un proyecto MERN, contiene todas las configuraciones básicas del servidor y del cliente.",
     "github": "https://github.com/node-projects-znareak/mern-template",
@@ -169,14 +165,7 @@
   },
   {
     "_id": "610fff026f95ba0008ca2aaf",
-    "technologies": [
-      "ReactJS",
-      "NodeJS",
-      "Javascript",
-      "SASS",
-      "ExpressJS",
-      "Mongoose"
-    ],
+    "technologies": ["ReactJS", "NodeJS", "Javascript", "SASS", "ExpressJS", "Mongoose"],
     "title": "Manjuro",
     "description": "Un sistema para subir imágenes, comentar y márcalas en favoritos.\r\nPosee sistema de rol y perfiles.",
     "github": "",
@@ -203,13 +192,7 @@
   },
   {
     "_id": "60abd43933f41700085bd41b",
-    "technologies": [
-      "ReactJS",
-      "NodeJS",
-      "Javascript",
-      "ExpressJS",
-      "Mongoose"
-    ],
+    "technologies": ["ReactJS", "NodeJS", "Javascript", "ExpressJS", "Mongoose"],
     "title": "Página de películas",
     "description": "Permite listar las películas de proveniente de una API pública, posee registro, inicio sesión y guardar películas como favoritos.",
     "github": "https://github.com/Titan-hand/react-movies-page",

@@ -10,14 +10,11 @@
   }
 }
 
-.headerTitle {
-  font-size: 1.2rem;
-  margin-bottom: 0;
-}
 
 .headerWrapper,
 .headerMenu {
   @include between();
+  justify-content: flex-end;
 }
 
 .headerWrapper {

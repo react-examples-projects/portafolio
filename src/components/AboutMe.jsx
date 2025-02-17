@@ -17,7 +17,7 @@ export default function AboutMe() {
     <section className={styles.aboutMe}>
       <div className={styles.aboutContent}>
         <div className={styles.aboutBio}>
-          <h2 className="text-gradient">{t("greeting")}</h2>
+          <h2 className="title">Libardo Rengifo</h2>
           <p>{t("bio")}</p>
 
           <div className={styles.aboutSocial}>

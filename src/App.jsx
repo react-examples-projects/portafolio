@@ -2,7 +2,6 @@ import Navbar from "./components/Navbar";
 import AboutMe from "./components/AboutMe";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
-
 import gradient1 from "./resources/gradient-1.png";
 
 function App() {

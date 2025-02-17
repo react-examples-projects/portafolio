@@ -28,7 +28,7 @@ export default function Navbar() {
   return (
     <header className={styles.header}>
       <div className={styles.headerWrapper}>
-        <h1 className={styles.headerTitle}>Libardo</h1>
+
 
         <div className={styles.headerMenu}>
           <Button
