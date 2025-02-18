@@ -22,9 +22,10 @@ export default function AboutMe() {
 
           <div className={styles.aboutSocial}>
             <Link href={cv_href} target="_blank" rel="noreferrer noopener">
-              <Button iconRight={<RiFileList2Line />} type="success-light" auto>
+              <button className={styles.default} >
                 {t("cv")}
-              </Button>
+                <RiFileList2Line style={{marginLeft:6}}/>
+              </button>
             </Link>
             <Link href="https://github.com/znareak" target="_blank" rel="noreferrer noopener">
               <Button

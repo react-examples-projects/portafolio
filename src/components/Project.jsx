@@ -38,25 +38,6 @@ export default function Project({ _id, technologies, title, description, github,
             </Tag>
           ))}
         </div>
-
-        {/* <div style={{ marginTop: "0.5rem" }}>
-          {github && (
-            <Link href={github} target="_blank" rel="noreferrer noopener" color>
-              <small>Github</small>
-            </Link>
-          )}
-          {link && (
-            <Link
-              href={link}
-              target="_blank"
-              rel="noreferrer noopener"
-              style={{ marginLeft: github ? "1rem" : "0" }}
-              color
-            >
-              <small>Demo</small>
-            </Link>
-          )}
-        </div> */}
       </div>
     </article>
   );

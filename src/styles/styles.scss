@@ -28,6 +28,8 @@ body {
   min-height: 100dvh !important;
 }
 
+
+
 body {
   cursor: url("/cursor.png"), auto !important;
 }
@@ -38,6 +40,10 @@ body {
 
 :where(a, button, .select, .select > *, input, .option):disabled {
   cursor: url("/notallowed.png"), auto !important;
+}
+
+button:disabled {
+  opacity: 0.5 !important;
 }
 
 code {
@@ -63,13 +69,17 @@ code {
   //overflow-x: hidden;
 }
 
+.title-gradient {
+  font-weight: bolder;
+  -webkit-text-fill-color: transparent;
+  color: transparent;
+  background:  linear-gradient(to right, #43cea2, #083d72) text;
+}
+
 .title {
   font-size: 2.5rem;
   margin-bottom: 1rem;
-  background-image: linear-gradient(180deg, #fff, #fff0 202.08%);
-  -webkit-background-clip: text;
-  background-clip: text;
-  color: transparent;
+  @extend .title-gradient;
 }
 
 .gradient1 {

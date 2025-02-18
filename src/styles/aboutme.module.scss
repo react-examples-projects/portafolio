@@ -70,8 +70,6 @@ $profileImageSizeSm: 200px;
 }
 
 .profileImage {
-  // --border-radius: 50%;
-  // --border-width: 2px;
   border-radius: 50% !important;
   border: 0;
   z-index: 2;
@@ -82,37 +80,14 @@ $profileImageSizeSm: 200px;
     object-fit: cover !important;
     object-position: center;
     display: block;
+    border: 1px solid #3f3f469d;
+    padding: 4px;
 
     @include querie-sm() {
       width: $profileImageSizeSm !important;
       height: $profileImageSizeSm !important;
     }
   }
-
-  // &::after {
-  //   --m-i: linear-gradient(#000, #000);
-  //   --m-o: content-box, padding-box;
-  //   content: "";
-  //   position: absolute;
-  //   left: 0;
-  //   top: 0;
-  //   width: 100%;
-  //   height: 100%;
-  //   padding: var(--border-width);
-  //   border-radius: var(--border-radius);
-  //   background-image: conic-gradient(#488cfb, #655adc, #e440bb, #488cfb);
-  //   -webkit-mask-image: var(--m-i), var(--m-i);
-  //   mask-image: var(--m-i), var(--m-i);
-  //   -webkit-mask-origin: var(--m-o);
-  //   mask-origin: var(--m-o);
-  //   -webkit-mask-clip: var(--m-o);
-  //   mask-clip: var(--m-o);
-  //   mask-composite: exclude;
-  //   -webkit-mask-composite: destination-out;
-  //   filter: hue-rotate(0);
-  //   animation: rotate-hue linear 2000ms infinite;
-  //   animation-play-state: running;
-  // }
 }
 
 @include dark-mode() {
@@ -128,8 +103,50 @@ $profileImageSizeSm: 200px;
   }
 }
 
-// @keyframes rotate-hue {
-//   to {
-//     filter: hue-rotate(1turn);
-//   }
-// }
+button.default {
+  border-radius: 6px;
+  font-weight: 400;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid;
+  font-weight: 500;
+  text-align: center;
+  transition-duration: 300ms;
+  transition-timing-function: ease-in;
+  font-size: 0.875rem;
+  padding: 0.5rem 1rem;
+
+  border-radius: 0.5rem;
+  background-color: #2563eb;
+  border-color: #1d4ed8;
+  color: white !important;
+  position: relative;
+  background-image: linear-gradient(to bottom, #3b82f6, #2563eb);
+  cursor: pointer;
+
+  &:hover {
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+    background-image: linear-gradient(to bottom, #2563eb, #2563eb);
+    border-color: #1d4ed8;
+  }
+
+  &:disabled {
+    opacity: 0.5;
+    box-shadow: none;
+    cursor: not-allowed;
+  }
+
+  &:focus {
+    box-shadow: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.25), inset 0 -1px 0 rgba(0, 0, 0, 0.35);
+    pointer-events: none;
+  }
+}
