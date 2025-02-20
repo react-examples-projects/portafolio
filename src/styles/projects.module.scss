@@ -70,6 +70,10 @@
   font-size: 12px !important;
 }
 
+.projectContainer {
+  width: 100%;
+}
+
 @include dark-mode {
   .projectContainer {
     display: flex;
@@ -116,6 +120,6 @@
   }
 
   .filterContainer {
-    background-color: $dark-filter-projects-background !important;
+    @include dark-gradient;
   }
 }

@@ -16,13 +16,16 @@ const FILTER_OPTIONS = [
 export default function Projects() {
   const { t } = useTranslation(["projects"]);
   const { projects, filter, onFilter } = useProjects();
-  const { nextPage, previousPage, data, pages, currentPage, ITEMS_PER_PAGE } = usePagination(projects);
+  const { nextPage, previousPage, data, pages, currentPage, ITEMS_PER_PAGE } =
+    usePagination(projects);
   const IS_LOWEST_LENGTH_PROJECTS = projects.length < ITEMS_PER_PAGE;
   return (
     <section className={styles.projects}>
       <div className={styles.content}>
-        <h3 className="text-gradient">{t("title")}</h3>
-       
+        <h3 className="text-gradient" style={{ marginBottom: 0 }}>
+          {t("title")}
+        </h3>
+
         <div className={styles.filter}>
           <div style={{ display: "flex", alignItems: "center", gap: "10px" }}>
             <Select

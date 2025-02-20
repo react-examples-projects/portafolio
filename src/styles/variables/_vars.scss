@@ -1,5 +1,5 @@
-$scroll-thumb-color : rgba(136, 136, 136, 0.575);
-$scroll-track-color : transparent;
+$scroll-thumb-color: rgba(136, 136, 136, 0.575);
+$scroll-track-color: transparent;
 
 $black-color: #000;
 $light-black: rgba(0, 0, 0, 0.219);
@@ -7,27 +7,32 @@ $white-color: #fff;
 $gray-color: #464646;
 $light-color: #eee;
 $light-gray: #a6a3a3;
-$footer-text-color : rgb(158, 158, 158);
+$footer-text-color: rgb(158, 158, 158);
 $page-spinner-color: rgba(51, 50, 50, 0.349);
-$project-list-border-color : rgb(214, 214, 214);
+$project-list-border-color: rgb(214, 214, 214);
 $filter-projects-color: #141924;
-$dark-light :#ffffff08;
+$dark-light: #ffffff08;
 
 // dark mode variables
-$dark-background-color : #0c0c0c;
-$dark-text-color : rgba(255, 255, 255, 0.863);
-$dark-button-social-color: $light-black;
+$dark-background-color: #0c0c0c;
+$dark-text-color: rgba(255, 255, 255, 0.863);
 $dark-page-loader-background: #1a202c;
-$dark-page-spinner-color: rgb(255, 255, 255, .2);
+$dark-page-spinner-color: rgb(255, 255, 255, 0.2);
 $dark-project-background: rgba(0, 0, 0, 0.021);
-$dark-filter-projects-background: $light-black;
-$dark-skills-color: $dark-light ;
+$dark-skills-color: $dark-light;
 
 @mixin gradient() {
   background: -o-linear-gradient(to top, #02aab0, #00cdac);
   background: -moz-linear-gradient(to top, #02aab0, #00cdac);
   background: -webkit-linear-gradient(to top, #02aab0, #00cdac);
   background: linear-gradient(to top, #02aab0, #00cdac);
+}
+
+@mixin dark-gradient() {
+  border-color: #4d4d4d !important;
+    background: linear-gradient(to top right, rgba(0, 0, 0, 0.315), #191919a8);
+    outline: 1px solid rgba(148, 163, 184, 0.1019607843);
+    outline-offset: 2px;
 }
 
 @mixin h-center() {
@@ -41,7 +46,7 @@ $dark-skills-color: $dark-light ;
 }
 
 @mixin setBackgroundBorder($border-color, $bg-color) {
-  border-color: $border-color  !important;
+  border-color: $border-color !important;
   background-color: $bg-color;
 }
 
